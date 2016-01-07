@@ -1,0 +1,64 @@
+<wsdl:definitions name="modelschema" targetNamespace="http://www.elliemae.com/services/modelschema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.elliemae.com/services/modelschema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sec="http://www.elliemae.com/services/security" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.elliemae.com/services/modelschema" elementFormDefault="qualified">
+			<xsd:include schemaLocation="../../xsd/Services/DomainModelSchema.xsd"/>
+			<xsd:import schemaLocation="../../../../../Security_SOAP_v1/Shared/SecuritySvc.xsd" namespace="http://www.elliemae.com/services/security"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GetEncompassFieldDomainModelSchemaRequestMsg">
+		<wsdl:part element="tns:GetEncompassFieldDomainModelSchemaRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetEncompassFieldDomainModelSchemaResponseMsg">
+		<wsdl:part element="tns:GetEncompassFieldDomainModelSchemaResponse" name="body"/>
+	</wsdl:message>
+	
+	<wsdl:message name="GetEncompassFieldDomainModelSchemaByEntitiesRequestMsg">
+		<wsdl:part element="tns:EncompassFieldDomainModelSchemaByEntitiesGetRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetEncompassFieldDomainModelSchemaByEntitiesResponseMsg">
+		<wsdl:part element="tns:EncompassFieldDomainModelSchemaByEntitiesGetResponse" name="body"/>
+	</wsdl:message>
+		
+	<wsdl:message name="SecurityContextHeader">
+		<wsdl:part name="header" element="sec:SecurityContext"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="ModelSchemaSvcPort">
+		<wsdl:operation name="GetEncompassFieldDomainModelSchema">
+			<wsdl:input message="tns:GetEncompassFieldDomainModelSchemaRequestMsg"/>
+			<wsdl:output message="tns:GetEncompassFieldDomainModelSchemaResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetEncompassFieldDomainModelSchemaByEntities">
+			<wsdl:input message="tns:GetEncompassFieldDomainModelSchemaByEntitiesRequestMsg"/>
+			<wsdl:output message="tns:GetEncompassFieldDomainModelSchemaByEntitiesResponseMsg"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ModelSchemaSvcPortSOAP11Binding" type="tns:ModelSchemaSvcPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="GetEncompassFieldDomainModelSchema">
+			<soap:operation style="document" soapAction="http://www.elliemae.com/services/modelschema/GetEncompassFieldDomainModelSchema"/>
+			<wsdl:input>
+				<soap:header message="tns:SecurityContextHeader" part="header" use="literal"/>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetEncompassFieldDomainModelSchemaByEntities">
+			<soap:operation style="document" soapAction="http://www.elliemae.com/services/modelschema/GetEncompassFieldDomainModelSchemaByEntities"/>
+			<wsdl:input>
+				<soap:header message="tns:SecurityContextHeader" part="header" use="literal"/>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DomainModelSchema">
+		<wsdl:port name="BasicHttpBinding_ModelSchemaSvcPortSOAP11Binding" binding="tns:ModelSchemaSvcPortSOAP11Binding">
+			<soap:address location="http://localhost:7001/encompass_v1/domainmodelschema"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

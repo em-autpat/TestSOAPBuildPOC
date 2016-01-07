@@ -1,0 +1,50 @@
+<wsdl:definitions targetNamespace="http://www.elliemae.com/encompass/platform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elliemae.com/encompass/platform" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.elliemae.com/encompass/platform/Imports">
+			<xsd:import schemaLocation="../../xsd/Platform/XMLSchema_-1316107014.xsd" namespace="http://www.elliemae.com/encompass/platform"/>
+			<xsd:import schemaLocation="../../xsd/Platform/XMLSchema_-1249100261.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xsd:import schemaLocation="../../xsd/Platform/XMLSchema_-1383113767.xsd" namespace="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="LoanRegisterRequest">
+		<wsdl:part name="LoanRegisterRequest" element="tns:LoanRegisterRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LoanRegisterRequest_Headers">
+		<wsdl:part name="SecurityContext" element="tns:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="LoanRegisterResponse">
+		<wsdl:part name="LoanRegisterResponse" element="tns:LoanRegisterResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LoanSubmitRequest">
+		<wsdl:part name="LoanSubmitRequest" element="tns:LoanSubmitRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LoanSubmitRequest_Headers">
+		<wsdl:part name="SecurityContext" element="tns:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="LoanSubmitResponse">
+		<wsdl:part name="LoanSubmitResponse" element="tns:LoanSubmitResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LoanChangedCircumstanceRequest">
+		<wsdl:part name="LoanChangedCircumstanceRequest" element="tns:LoanChangedCircumstanceRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LoanChangedCircumstanceRequest_Headers">
+		<wsdl:part name="SecurityContext" element="tns:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="LoanChangedCircumstanceResponse">
+		<wsdl:part name="LoanChangedCircumstanceResponse" element="tns:LoanChangedCircumstanceResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="ILoanService">
+		<wsdl:operation name="RegisterLoan">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/platform/ILoanService/RegisterLoan" name="LoanRegisterRequest" message="tns:LoanRegisterRequest"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/platform/ILoanService/RegisterLoanResponse" name="LoanRegisterResponse" message="tns:LoanRegisterResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="SubmitLoan">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/platform/ILoanService/SubmitLoan" name="LoanSubmitRequest" message="tns:LoanSubmitRequest"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/platform/ILoanService/SubmitLoanResponse" name="LoanSubmitResponse" message="tns:LoanSubmitResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="ChangedCircumstance">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/platform/ILoanService/ChangedCircumstance" name="LoanChangedCircumstanceRequest" message="tns:LoanChangedCircumstanceRequest"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/platform/ILoanService/ChangedCircumstanceResponse" name="LoanChangedCircumstanceResponse" message="tns:LoanChangedCircumstanceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

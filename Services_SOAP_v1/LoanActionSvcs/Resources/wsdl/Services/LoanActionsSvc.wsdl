@@ -1,0 +1,92 @@
+<wsdl:definitions name="LoanActionsSvc" targetNamespace="http://www.elliemae.com/services/loanactions" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elliemae.com/services/loanactions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sec="http://www.elliemae.com/services/security">
+
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.elliemae.com/services/loanactions" elementFormDefault="qualified">
+			<xsd:include schemaLocation="../../xsd/Services/LoanActionsSvc.xsd"/>
+			<xsd:import schemaLocation="../../../../../Security_SOAP_v1/Shared/SecuritySvc.xsd" namespace="http://www.elliemae.com/services/security"/>
+		</xsd:schema>
+	</wsdl:types>
+
+	<!-- register loan -->
+	<wsdl:message name="RegisterLoanRequest">
+		<wsdl:part name="RegisterLoanRequest" element="tns:RegisterLoanRequest"/>
+	</wsdl:message>
+	<wsdl:message name="RegisterLoanRequest_Headers">
+		<wsdl:part name="header" element="sec:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="RegisterLoanResponse">
+		<wsdl:part name="RegisterLoanResponse" element="tns:RegisterLoanResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SubmitLoanRequest">
+		<wsdl:part name="SubmitLoanRequest" element="tns:SubmitLoanRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SubmitLoanRequest_Headers">
+		<wsdl:part name="header" element="sec:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="SubmitLoanResponse">
+		<wsdl:part name="SubmitLoanResponse" element="tns:SubmitLoanResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ChangedCircumstanceRequest">
+		<wsdl:part name="ChangedCircumstanceRequest" element="tns:ChangedCircumstanceRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ChangedCircumstanceRequest_Headers">
+		<wsdl:part name="header" element="sec:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="ChangedCircumstanceResponse">
+		<wsdl:part name="ChangedCircumstanceResponse" element="tns:ChangedCircumstanceResponse"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="LoanActionsSvc">
+		<wsdl:operation name="RegisterLoan">
+			<wsdl:input message="tns:RegisterLoanRequest"/>
+			<wsdl:output message="tns:RegisterLoanResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="SubmitLoan">
+			<wsdl:input message="tns:SubmitLoanRequest"/>
+			<wsdl:output message="tns:SubmitLoanResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="ChangedCircumstance">
+			<wsdl:input message="tns:ChangedCircumstanceRequest"/>
+			<wsdl:output message="tns:ChangedCircumstanceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="LoanActionsSvcSOAP" type="tns:LoanActionsSvc">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="RegisterLoan">
+			<soap:operation soapAction="http://www.elliemae.com/services/loanactions/RegisterLoan"/>
+			<wsdl:input>
+				<soap:header message="tns:RegisterLoanRequest_Headers" part="header" use="literal"/>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SubmitLoan">
+			<soap:operation soapAction="http://www.elliemae.com/services/loanactions/SubmitLoan"/>
+			<wsdl:input>
+				<soap:header message="tns:SubmitLoanRequest_Headers" part="header" use="literal"/>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ChangedCircumstance">
+			<soap:operation soapAction="http://www.elliemae.com/services/loanactions/ChangedCircumstance"/>
+			<wsdl:input>
+				<soap:header message="tns:ChangedCircumstanceRequest_Headers" part="header" use="literal"/>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="LoanActionsSvc">
+		<wsdl:port binding="tns:LoanActionsSvcSOAP" name="LoanActionsSvcSOAP">
+			<soap:address location="http://encompass-ib.dev.dco.elmae:11001/encompass_v1/loan/actions"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

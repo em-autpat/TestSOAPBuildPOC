@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified"
+	targetNamespace="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto">
+	<xs:complexType name="DirectoryInstanceDto">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Id" type="xs:int" />
+			<xs:element minOccurs="0" name="Name" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DirectoryInstanceDto" nillable="true"
+		type="tns:DirectoryInstanceDto" />
+	<xs:complexType name="ArrayOfDirectoryInstanceDto">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DirectoryInstanceDto"
+				nillable="true" type="tns:DirectoryInstanceDto" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfDirectoryInstanceDto" nillable="true"
+		type="tns:ArrayOfDirectoryInstanceDto" />
+	<xs:complexType name="DirectoryCategoryDto">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Id" type="xs:int" />
+			<xs:element minOccurs="0" name="Name" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DirectoryCategoryDto" nillable="true"
+		type="tns:DirectoryCategoryDto" />
+	<xs:complexType name="ArrayOfDirectoryCategoryDto">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DirectoryCategoryDto"
+				nillable="true" type="tns:DirectoryCategoryDto" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfDirectoryCategoryDto" nillable="true"
+		type="tns:ArrayOfDirectoryCategoryDto" />
+	<xs:simpleType name="DirectoryEntryValueType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="String" />
+			<xs:enumeration value="Int" />
+			<xs:enumeration value="DateTime" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="DirectoryEntryValueType" nillable="true"
+		type="tns:DirectoryEntryValueType" />
+	<xs:complexType name="DirectoryEntryDto">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+			<xs:element minOccurs="0" name="CategoryName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Id" type="xs:int" />
+			<xs:element minOccurs="0" name="InstanceId" type="xs:int" />
+			<xs:element minOccurs="0" name="InstanceName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="Name" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Value" nillable="true"
+				type="xs:anyType" />
+			<xs:element minOccurs="0" name="ValueType"
+				type="tns:DirectoryEntryValueType" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DirectoryEntryDto" nillable="true"
+		type="tns:DirectoryEntryDto" />
+	<xs:complexType name="ArrayOfDirectoryEntryDto">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="DirectoryEntryDto"
+				nillable="true" type="tns:DirectoryEntryDto" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfDirectoryEntryDto" nillable="true"
+		type="tns:ArrayOfDirectoryEntryDto" />
+</xs:schema>

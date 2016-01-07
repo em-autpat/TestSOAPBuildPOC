@@ -1,0 +1,53 @@
+<xsd:schema targetNamespace="http://www.elliemae.com/services/modelschema"
+	elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.elliemae.com/services/modelschema">
+	
+	<!-- ####################### -->
+	<!-- GET EncompassFieldDomainModelSchema -->
+	<!-- ####################### -->
+
+	<xsd:complexType name="GetEncompassFieldDomainModelSchemaRequestType">
+		<xsd:sequence />
+	</xsd:complexType>
+
+	<xsd:complexType name="GetEncompassFieldDomainModelSchemaResponseType">
+		<xsd:sequence>
+			<xsd:element name="SchemaData" nillable="false"
+				minOccurs="1" maxOccurs="1" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="GetEncompassFieldDomainModelSchemaRequest"
+		type="tns:GetEncompassFieldDomainModelSchemaRequestType" />
+	<xsd:element name="GetEncompassFieldDomainModelSchemaResponse"
+		type="tns:GetEncompassFieldDomainModelSchemaResponseType" />
+	<!-- ####################### -->
+	<!--  GetEncompassFieldDomainModelSchemaByEntities -->
+	<!-- ####################### -->
+	
+	<xsd:complexType name="GetEncompassFieldDomainModelSchemaByEntitiesRequestType">
+		<xsd:sequence>
+			<xsd:element name="Entities" nillable="true" type="tns:EntitiesType" />
+			<xsd:element name="IncludeFieldExtensions" type="xsd:boolean" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="EntitiesType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Item"
+				nillable="true" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="GetEncompassFieldDomainModelSchemaByEntitiesResponseType">
+		<xsd:sequence>
+			<xsd:element name="SchemaData" nillable="false"
+				minOccurs="1" maxOccurs="1" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="EncompassFieldDomainModelSchemaByEntitiesGetRequest"
+		type="tns:GetEncompassFieldDomainModelSchemaByEntitiesRequestType" />
+	<xsd:element name="EncompassFieldDomainModelSchemaByEntitiesGetResponse"
+		type="tns:GetEncompassFieldDomainModelSchemaByEntitiesResponseType" />		
+</xsd:schema>

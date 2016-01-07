@@ -1,0 +1,199 @@
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.elliemae.com/encompass/directory" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elliemae.com/encompass/directory">
+	<xs:import schemaLocation="XMLSchema_1851356616.xsd" namespace="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+	<xs:element name="AddInstance">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="instanceName" nillable="true" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddInstanceResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="AddInstanceResult" nillable="true" type="q1:DirectoryInstanceDto" xmlns:q1="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetInstanceById">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="instanceId" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetInstanceByIdResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="GetInstanceByIdResult" nillable="true" type="q2:DirectoryInstanceDto" xmlns:q2="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetInstances">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetInstancesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="GetInstancesResult" nillable="true" type="q3:ArrayOfDirectoryInstanceDto" xmlns:q3="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateInstance">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="instanceId" type="xs:int"/>
+				<xs:element minOccurs="0" name="instanceName" nillable="true" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateInstanceResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddCategory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="categoryName" nillable="true" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddCategoryResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="AddCategoryResult" nillable="true" type="q4:DirectoryCategoryDto" xmlns:q4="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetCategoryById">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="categoryId" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetCategoryByIdResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="GetCategoryByIdResult" nillable="true" type="q5:DirectoryCategoryDto" xmlns:q5="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetCategories">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetCategoriesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="GetCategoriesResult" nillable="true" type="q6:ArrayOfDirectoryCategoryDto" xmlns:q6="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateCategory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="categoryId" type="xs:int"/>
+				<xs:element minOccurs="0" name="categoryName" nillable="true" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateCategoryResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddEntry">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="instanceId" type="xs:int"/>
+				<xs:element minOccurs="0" name="categoryId" type="xs:int"/>
+				<xs:element minOccurs="0" name="entryName" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="valueType" type="q7:DirectoryEntryValueType" xmlns:q7="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+				<xs:element minOccurs="0" name="value" nillable="true" type="xs:anyType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddEntryResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="AddEntryResult" nillable="true" type="q8:DirectoryEntryDto" xmlns:q8="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetEntry">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="instanceName" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="categoryName" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="entryName" nillable="true" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetEntryResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="GetEntryResult" nillable="true" type="q9:DirectoryEntryDto" xmlns:q9="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetEntryById">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="entryId" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetEntryByIdResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="GetEntryByIdResult" nillable="true" type="q10:DirectoryEntryDto" xmlns:q10="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetEntriesInInstance">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="instanceName" nillable="true" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetEntriesInInstanceResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="GetEntriesInInstanceResult" nillable="true" type="q11:ArrayOfDirectoryEntryDto" xmlns:q11="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetEntries">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetEntriesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="GetEntriesResult" nillable="true" type="q12:ArrayOfDirectoryEntryDto" xmlns:q12="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateEntry">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="entryId" type="xs:int"/>
+				<xs:element minOccurs="0" name="categoryId" type="xs:int"/>
+				<xs:element minOccurs="0" name="entryName" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="valueType" type="q13:DirectoryEntryValueType" xmlns:q13="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+				<xs:element minOccurs="0" name="value" nillable="true" type="xs:anyType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateEntryResponse">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

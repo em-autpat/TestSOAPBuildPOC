@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified"
+	targetNamespace="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts">
+	<xs:simpleType name="ExternalOriginatorOrgSetting">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="License" />
+			<xs:enumeration value="LoanTypes" />
+			<xs:enumeration value="AssignableSalesReps" />
+			<xs:enumeration value="CompanyStatus" />
+			<xs:enumeration value="ContactStatus" />
+			<xs:enumeration value="CompanyRating" />
+			<xs:enumeration value="AttachmentCategory" />
+			<xs:enumeration value="PriceGroup" />
+			<xs:enumeration value="UrlList" />
+			<xs:enumeration value="PrimaryManager" />
+			<xs:enumeration value="Note" />
+			<xs:enumeration value="Attachment" />
+			<xs:enumeration value="LOComp" />
+			<xs:enumeration value="LoCompHistory" />
+			<xs:enumeration value="ExternalSalesRepListForOrg" />
+			<xs:enumeration value="BasicInfo" />
+			<xs:enumeration value="LoanCriteria" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ExternalOriginatorOrgSetting" nillable="true"
+		type="tns:ExternalOriginatorOrgSetting" />
+	<xs:simpleType name="ExternalOriginatorEntityType">
+		<xs:annotation>
+			<xs:appinfo>
+				<ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema"
+					xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None" />
+			<xs:enumeration value="Broker" />
+			<xs:enumeration value="Correspondent" />
+			<xs:enumeration value="Both" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ExternalOriginatorEntityType" nillable="true"
+		type="tns:ExternalOriginatorEntityType" />
+	<xs:simpleType name="ExternalOriginatorOrgType">
+		<xs:annotation>
+			<xs:appinfo>
+				<ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema"
+					xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Company" />
+			<xs:enumeration value="CompanyExtension" />
+			<xs:enumeration value="Branch" />
+			<xs:enumeration value="BranchExtension" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ExternalOriginatorOrgType" nillable="true"
+		type="tns:ExternalOriginatorOrgType" />
+	<xs:simpleType name="LoanPurposes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None" />
+			<xs:enumeration value="Purchase" />
+			<xs:enumeration value="NoCashOutRefi" />
+			<xs:enumeration value="CashOutRefi" />
+			<xs:enumeration value="Construction" />
+			<xs:enumeration value="ConstructionPerm" />
+			<xs:enumeration value="Other" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="LoanPurposes" nillable="true" type="tns:LoanPurposes" />
+	<xs:simpleType name="LoanTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None" />
+			<xs:enumeration value="Conventional" />
+			<xs:enumeration value="FHA" />
+			<xs:enumeration value="VA" />
+			<xs:enumeration value="USDA" />
+			<xs:enumeration value="HELOC" />
+			<xs:enumeration value="Other" />
+			<xs:enumeration value="FirstLien" />
+			<xs:enumeration value="SecondLien" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="LoanTypes" nillable="true" type="tns:LoanTypes" />
+</xs:schema>

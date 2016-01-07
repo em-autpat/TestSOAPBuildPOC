@@ -1,0 +1,99 @@
+<wsdl:definitions targetNamespace="http://www.elliemae.com/services/security" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elliemae.com/services/security" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.elliemae.com/services/security" elementFormDefault="qualified">
+			<xsd:include schemaLocation="../../../Shared/SecuritySvc.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="AuthenticateClientRequestMsg">
+		<wsdl:part name="body" element="tns:AuthenticateClientRequest"/>
+	</wsdl:message>
+	<wsdl:message name="AuthenticateClientResponseMsg">
+		<wsdl:part name="body" element="tns:AuthenticateClientResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetUserProfileRequestMsg">
+		<wsdl:part name="body" element="tns:UserProfileGetRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetUserProfileResponseMsg">
+		<wsdl:part name="body" element="tns:UserProfileGetResponse"/>
+	</wsdl:message>
+<!--	
+	<wsdl:message name="IssueAuthenticationTokenRequestMsg">
+		<wsdl:part name="body" element="tns:IssueAuthenticationTokenRequest" />
+	</wsdl:message>
+	<wsdl:message name="IssueAuthenticationTokenResponseMsg">
+		<wsdl:part name="body" element="tns:IssueAuthenticationTokenResponse" />
+	</wsdl:message>
+	<wsdl:message name="AuthenticateClientWithTokenRequestMsg">
+		<wsdl:part name="body" element="tns:AuthenticateClientWithTokenRequest" />
+	</wsdl:message>
+	<wsdl:message name="AuthenticateClientWithTokenResponseMsg">
+		<wsdl:part name="body" element="tns:AuthenticateClientWithTokenResponse" />
+	</wsdl:message>
+ -->
+ 
+	<wsdl:portType name="SecuritySvcPort">
+		<wsdl:operation name="AuthenticateClient">
+			<wsdl:input message="tns:AuthenticateClientRequestMsg"/>
+			<wsdl:output message="tns:AuthenticateClientResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetUserProfile">
+			<wsdl:input message="tns:GetUserProfileRequestMsg"/>
+			<wsdl:output message="tns:GetUserProfileResponseMsg"/>
+		</wsdl:operation>
+<!-- 		
+		<wsdl:operation name="IssueAuthenticationToken">
+			<wsdl:input message="tns:IssueAuthenticationTokenRequestMsg" />
+			<wsdl:output message="tns:IssueAuthenticationTokenResponseMsg" />
+		</wsdl:operation>
+		<wsdl:operation name="AuthenticateClientWithToken">
+			<wsdl:input message="tns:AuthenticateClientWithTokenRequestMsg" />
+			<wsdl:output message="tns:AuthenticateClientWithTokenResponseMsg" />
+		</wsdl:operation>
+ -->		
+	</wsdl:portType>
+	
+	<wsdl:binding name="SecuritySvcPortSOAP11Binding" type="tns:SecuritySvcPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="AuthenticateClient">
+			<soap:operation style="document" soapAction="http://www.elliemae.com/services/security/AuthenticateClient"/>
+			<wsdl:input>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetUserProfile">
+			<soap:operation style="document" soapAction="http://www.elliemae.com/services/security/GetUserProfile"/>
+			<wsdl:input>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:output>
+		</wsdl:operation>
+<!-- 		
+		<wsdl:operation name="IssueAuthenticationToken">
+			<soap:operation style="document" soapAction="http://www.elliemae.com/services/security/IssueAuthenticationToken" />
+			<wsdl:input>
+				<soap:body use="literal" parts="body" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AuthenticateClientWithToken">
+			<soap:operation style="document" soapAction="http://www.elliemae.com/services/security/AuthenticateClientWithToken" />
+			<wsdl:input>
+				<soap:body use="literal" parts="body" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body" />
+			</wsdl:output>
+		</wsdl:operation>
+ -->		
+	</wsdl:binding>
+
+</wsdl:definitions>

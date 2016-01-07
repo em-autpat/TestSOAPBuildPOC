@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.elliemae.com/services/loanactions"
+	xmlns:tns="http://www.elliemae.com/services/loanactions"
+	elementFormDefault="qualified">
+
+	<xsd:element name="RegisterLoanRequest" nillable="true"
+		type="tns:RegisterLoanRequestType" />
+	<xsd:element name="RegisterLoanResponse" nillable="true"
+		type="tns:RegisterLoanResponseType" />
+
+	<xsd:element name="SubmitLoanRequest" nillable="true"
+		type="tns:SubmitLoanRequestType" />
+	<xsd:element name="SubmitLoanResponse" nillable="true"
+		type="tns:SubmitLoanResponseType" />
+
+	<xsd:element name="ChangedCircumstanceRequest" nillable="true"
+		type="tns:ChangedCircumstanceRequestType" />
+	<xsd:element name="ChangedCircumstanceResponse" nillable="true"
+		type="tns:ChangedCircumstanceResponseType" />
+
+	<xsd:simpleType name="guid">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern
+				value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="RegisterLoanRequestType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Entities" nillable="true"
+				type="tns:ListOfEntities" />
+			<xsd:element name="Format" type="tns:PayloadFormatType" />
+			<xsd:element name="LoanData" nillable="true" type="xsd:string" />
+			<xsd:element name="LoanId" type="tns:guid" />
+			<xsd:element name="RegisterDate" type="xsd:dateTime" />
+			<xsd:element name="Version" nillable="true" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ListOfEntities">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Entity"
+				nillable="true" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="PayloadFormatType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Xml" />
+			<xsd:enumeration value="Json" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="RegisterLoanResponseType">
+		<xsd:sequence>
+			<xsd:sequence>
+				<xsd:element minOccurs="0" name="LoanData" nillable="true"
+					type="xsd:string" />
+				<xsd:element minOccurs="0" name="LoanId" type="tns:guid" />
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="SubmitLoanRequestType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Entities" nillable="true"
+				type="tns:ListOfEntities" />
+			<xsd:element name="Format" type="tns:PayloadFormatType" />
+			<xsd:element name="LoanData" nillable="true" type="xsd:string" />
+			<xsd:element name="LoanId" type="tns:guid" />
+			<xsd:element name="SubmitDate" type="xsd:dateTime" />
+			<xsd:element name="Version" nillable="true" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="SubmitLoanResponseType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="LoanData" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="LoanId" type="tns:guid" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ChangedCircumstanceRequestType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Entities" nillable="true"
+				type="tns:ListOfEntities" />
+			<xsd:element name="Format" type="tns:PayloadFormatType" />
+			<xsd:element name="LoanData" nillable="true" type="xsd:string" />
+			<xsd:element name="LoanId" type="tns:guid" />
+			<xsd:element name="Version" nillable="true" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ChangedCircumstanceResponseType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="LoanData" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="LoanId" type="tns:guid" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

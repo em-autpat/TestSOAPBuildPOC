@@ -1,0 +1,113 @@
+<wsdl:definitions targetNamespace="http://www.elliemae.com/encompass/platform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elliemae.com/encompass/platform" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.elliemae.com/encompass/platform/Imports">
+			<xsd:import schemaLocation="../xsd/XMLSchema_362067319.xsd" namespace="http://www.elliemae.com/encompass/platform"/>
+			<xsd:import schemaLocation="../xsd/XMLSchema_429074072.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xsd:import schemaLocation="../xsd/XMLSchema_295060566.xsd" namespace="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+			<xsd:import schemaLocation="../xsd/XMLSchema_228053813.xsd" namespace="http://schemas.datacontract.org/2004/07/EllieMae.EMLite.Common"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="TPOContactsGetRequest">
+		<wsdl:part name="TPOContactsGetRequest" element="tns:TPOContactsGetRequest"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactsGetRequest_Headers">
+		<wsdl:part name="SecurityContext" element="tns:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactsGetResponse">
+		<wsdl:part name="TPOContactsGetResponse" element="tns:TPOContactsGetResponse"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactGetByUserIdRequest">
+		<wsdl:part name="TPOContactGetByUserIdRequest" element="tns:TPOContactGetByUserIdRequest"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactGetByUserIdRequest_Headers">
+		<wsdl:part name="SecurityContext" element="tns:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactGetByUserIdResponse">
+		<wsdl:part name="TPOContactGetResponse" element="tns:TPOContactGetResponse"/>
+	</wsdl:message>
+	<wsdl:message name="TPOLoginRequest">
+		<wsdl:part name="TPOLoginRequest" element="tns:TPOLoginRequest"/>
+	</wsdl:message>
+	<wsdl:message name="TPOLoginResponse">
+		<wsdl:part name="TPOLoginResponse" element="tns:TPOLoginResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ExternalOrganizationGetRequest">
+		<wsdl:part name="ExternalOrganizationGetRequest" element="tns:ExternalOrganizationGetRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ExternalOrganizationGetRequest_Headers">
+		<wsdl:part name="SecurityContext" element="tns:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="ExternalOrganizationGetResponse">
+		<wsdl:part name="ExternalOrganizationGetResponse" element="tns:ExternalOrganizationGetResponse"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactDeleteRequest">
+		<wsdl:part name="TPOContactDeleteRequest" element="tns:TPOContactDeleteRequest"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactDeleteRequest_Headers">
+		<wsdl:part name="SecurityContext" element="tns:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactDeleteResponse">
+		<wsdl:part name="TPOContactDeleteResponse" element="tns:TPOContactDeleteResponse"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactCreateRequest">
+		<wsdl:part name="TPOContactCreateRequest" element="tns:TPOContactCreateRequest"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactCreateRequest_Headers">
+		<wsdl:part name="SecurityContext" element="tns:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactCreateResponse">
+		<wsdl:part name="TPOContactCreateResponse" element="tns:TPOContactCreateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactUpdateRequest">
+		<wsdl:part name="TPOContactUpdateRequest" element="tns:TPOContactUpdateRequest"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactUpdateRequest_Headers">
+		<wsdl:part name="SecurityContext" element="tns:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="TPOContactUpdateResponse">
+		<wsdl:part name="TPOContactUpdateResponse" element="tns:TPOContactUpdateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ResetUserPasswordRequest">
+		<wsdl:part name="TPOResetUserPassword" element="tns:TPOResetUserPassword"/>
+	</wsdl:message>
+	<wsdl:message name="ResetUserPasswordRequest_Headers">
+		<wsdl:part name="SecurityContext" element="tns:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:message name="ResetUserPasswordResponse">
+		<wsdl:part name="ResetUserPasswordResponse" element="tns:ResetUserPasswordResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="IExternalCompanySetting">
+		<wsdl:operation name="GetTPOContacts">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/GetTPOContacts" name="TPOContactsGetRequest" message="tns:TPOContactsGetRequest"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/GetTPOContactsResponse" name="TPOContactsGetResponse" message="tns:TPOContactsGetResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetTPOContactByUserId">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/GetTPOContactByUserId" name="TPOContactGetByUserIdRequest" message="tns:TPOContactGetByUserIdRequest"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/GetTPOContactByUserIdResponse" name="TPOContactGetByUserIdResponse" message="tns:TPOContactGetByUserIdResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="TPOLogin">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/TPOLogin" name="TPOLoginRequest" message="tns:TPOLoginRequest"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/TPOLoginResponse" name="TPOLoginResponse" message="tns:TPOLoginResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetExternalOrganization">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/GetExternalOrganization" name="ExternalOrganizationGetRequest" message="tns:ExternalOrganizationGetRequest"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/GetExternalOrganizationResponse" name="ExternalOrganizationGetResponse" message="tns:ExternalOrganizationGetResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteTPOContact">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/DeleteTPOContact" name="TPOContactDeleteRequest" message="tns:TPOContactDeleteRequest"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/DeleteTPOContactResponse" name="TPOContactDeleteResponse" message="tns:TPOContactDeleteResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateTPOContact">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/CreateTPOContact" name="TPOContactCreateRequest" message="tns:TPOContactCreateRequest"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/CreateTPOContactResponse" name="TPOContactCreateResponse" message="tns:TPOContactCreateResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateTPOContact">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/UpdateTPOContact" name="TPOContactUpdateRequest" message="tns:TPOContactUpdateRequest"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/UpdateTPOContactResponse" name="TPOContactUpdateResponse" message="tns:TPOContactUpdateResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="ResetUserPassword">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/ResetUserPassword" name="ResetUserPasswordRequest" message="tns:ResetUserPasswordRequest"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/platform/IExternalCompanySetting/ResetUserPasswordResponse" name="ResetUserPasswordResponse" message="tns:ResetUserPasswordResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

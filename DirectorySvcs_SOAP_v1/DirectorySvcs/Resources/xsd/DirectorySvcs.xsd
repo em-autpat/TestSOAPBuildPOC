@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.elliemae.com/encompass/directory"
+    xmlns:tns="http://www.elliemae.com/encompass/directory"
+    elementFormDefault="qualified">
+ <xsd:element name="GetSettingsRequest" type="tns:GetSettingsRequestType"/>
+ <xsd:element name="GetSettingsResponse" type="tns:GetSettingsResponseType"/>
+ <xsd:complexType name="GetSettingsRequestType">
+  <xsd:sequence>
+   <xsd:element name="InstanceID" type="xsd:string"/>
+   <xsd:element name="Category" type="xsd:string"/>
+   <xsd:element name="Settings" type="tns:SettingsType"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="GetSettingsResponseType">
+  <xsd:sequence>
+   <xsd:element name="Settings" type="tns:SettingsType"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="SettingsType">
+  <xsd:sequence>
+   <xsd:element name="Setting" type="tns:SettingType" maxOccurs="unbounded"
+                minOccurs="0"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="SettingType">
+  <xsd:sequence>
+   <xsd:element name="Name" type="xsd:string"/>
+   <xsd:element name="Value" type="xsd:string" nillable="true" minOccurs="0"/>
+  </xsd:sequence>
+ </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://www.elliemae.com/services/datalist" 
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+			xmlns:tns="http://www.elliemae.com/services/datalist" >
+	
+	<xsd:element name="GetDataListRequest" type="tns:DataListRequestType"/>
+	<xsd:element name="GetDataListResponse" type="tns:DataListResponseType"/>
+	
+ <xsd:complexType name="DataListRequestType">
+		<xsd:sequence>
+			<xsd:element name="MilestonesListRequired" type="xsd:boolean" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="OfficerListRequired" type="xsd:boolean" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="ProcessorListRequired" type="xsd:boolean" maxOccurs="1" minOccurs="0"/>
+		</xsd:sequence>
+ </xsd:complexType>
+	
+	 <xsd:complexType name="DataListResponseType">
+		<xsd:sequence>
+            <xsd:element name="MilestonesList" type="tns:ArrayofKeyValue" maxOccurs="1" minOccurs="0"></xsd:element>
+            <xsd:element name="LoanOfficerList" type="tns:ArrayofKeyValue" maxOccurs="1" minOccurs="0"></xsd:element>
+			<xsd:element name="LoanProcessorList" type="tns:ArrayofKeyValue" maxOccurs="1" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+	 </xsd:complexType>
+ <xsd:complexType name="KeyValueType">
+ 	<xsd:sequence>
+ 		<xsd:element name="Key" type="xsd:string"></xsd:element>
+ 		<xsd:element name="Value" type="xsd:string"></xsd:element>
+ 	</xsd:sequence>
+ </xsd:complexType>
+
+ <xsd:complexType name="ArrayofKeyValue">
+ 	<xsd:sequence>
+ 		<xsd:element name="KeyValue" type="tns:KeyValueType" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+ 	</xsd:sequence>
+ </xsd:complexType>
+</xsd:schema>

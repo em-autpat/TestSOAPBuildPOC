@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<p:configjarSettings xmlns:p="http://www.bea.com/alsb/tools/configjar/config">
+  <p:source>
+
+    <p:system  dir="OSB Configuration"/>
+	<p:project dir="Services_Logging_v1"/>
+	<p:project dir="Services_SOAP_v1"/>
+	<p:project dir="ErrorHandling_SOAP_v1"/>
+	<p:project dir="DirectorySvcs_SOAP_v1"/>
+	<p:project dir="Security_SOAP_v1"/>
+	<p:project dir="eVaultSvcs_SOAP_v1"/>
+	<p:project dir="LogService_v1"/>
+	<p:fileset>
+      <p:exclude name="*/target/**" />
+	  <p:exclude name="*/test/**" />
+      <p:exclude name="*/security/**" />
+      <p:exclude name="*/.settings/**" />
+      <p:exclude name="*/import.*" />
+      <p:exclude name="*/alsbdebug.xml" />
+      <p:exclude name="*/configfwkdebug.xml" />
+	  <p:exclude name="*/SOAP-Logging-services-soapui-project-jenkins" />
+	  <p:exclude name="*/pom.xml" />
+      <p:exclude name="*/settings.xml" />
+	  <p:exclude name="*/.metadata/**" />
+	  <p:exclude name="*/**/.settings/**" />
+      <p:exclude name="*/osbProject.jar" />
+    </p:fileset>
+  </p:source>
+  <p:configjar jar="target/osbProject.jar">
+    <p:projectLevel includeSystem="false">
+
+    </p:projectLevel>
+  </p:configjar>
+</p:configjarSettings>

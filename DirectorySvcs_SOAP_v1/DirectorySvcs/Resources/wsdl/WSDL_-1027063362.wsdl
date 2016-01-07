@@ -1,0 +1,151 @@
+<wsdl:definitions targetNamespace="http://www.elliemae.com/encompass/directory" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elliemae.com/encompass/directory" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.elliemae.com/encompass/directory/Imports">
+			<xsd:import schemaLocation="../xsd/XMLSchema_-638172346.xsd" namespace="http://www.elliemae.com/encompass/directory"/>
+			<xsd:import schemaLocation="../xsd/XMLSchema_606592135.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xsd:import schemaLocation="../xsd/XMLSchema_1851356616.xsd" namespace="http://schemas.datacontract.org/2004/07/Elli.DirectoryServices.Contracts.Dto"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="IDirectoryService_AddInstance_InputMessage">
+		<wsdl:part name="parameters" element="tns:AddInstance"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_AddInstance_OutputMessage">
+		<wsdl:part name="parameters" element="tns:AddInstanceResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetInstanceById_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetInstanceById"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetInstanceById_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetInstanceByIdResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetInstances_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetInstances"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetInstances_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetInstancesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_UpdateInstance_InputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateInstance"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_UpdateInstance_OutputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateInstanceResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_AddCategory_InputMessage">
+		<wsdl:part name="parameters" element="tns:AddCategory"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_AddCategory_OutputMessage">
+		<wsdl:part name="parameters" element="tns:AddCategoryResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetCategoryById_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetCategoryById"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetCategoryById_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetCategoryByIdResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetCategories_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetCategories"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetCategories_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetCategoriesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_UpdateCategory_InputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateCategory"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_UpdateCategory_OutputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateCategoryResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_AddEntry_InputMessage">
+		<wsdl:part name="parameters" element="tns:AddEntry"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_AddEntry_OutputMessage">
+		<wsdl:part name="parameters" element="tns:AddEntryResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetEntry_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetEntry"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetEntry_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetEntryResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetEntryById_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetEntryById"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetEntryById_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetEntryByIdResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetEntriesInInstance_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetEntriesInInstance"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetEntriesInInstance_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetEntriesInInstanceResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetEntries_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetEntries"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_GetEntries_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetEntriesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_UpdateEntry_InputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateEntry"/>
+	</wsdl:message>
+	<wsdl:message name="IDirectoryService_UpdateEntry_OutputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateEntryResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="IDirectoryService">
+		<wsdl:operation name="AddInstance">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/AddInstance" message="tns:IDirectoryService_AddInstance_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/AddInstanceResponse" message="tns:IDirectoryService_AddInstance_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetInstanceById">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetInstanceById" message="tns:IDirectoryService_GetInstanceById_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetInstanceByIdResponse" message="tns:IDirectoryService_GetInstanceById_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetInstances">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetInstances" message="tns:IDirectoryService_GetInstances_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetInstancesResponse" message="tns:IDirectoryService_GetInstances_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateInstance">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/UpdateInstance" message="tns:IDirectoryService_UpdateInstance_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/UpdateInstanceResponse" message="tns:IDirectoryService_UpdateInstance_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="AddCategory">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/AddCategory" message="tns:IDirectoryService_AddCategory_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/AddCategoryResponse" message="tns:IDirectoryService_AddCategory_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCategoryById">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetCategoryById" message="tns:IDirectoryService_GetCategoryById_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetCategoryByIdResponse" message="tns:IDirectoryService_GetCategoryById_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCategories">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetCategories" message="tns:IDirectoryService_GetCategories_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetCategoriesResponse" message="tns:IDirectoryService_GetCategories_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateCategory">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/UpdateCategory" message="tns:IDirectoryService_UpdateCategory_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/UpdateCategoryResponse" message="tns:IDirectoryService_UpdateCategory_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="AddEntry">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/AddEntry" message="tns:IDirectoryService_AddEntry_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/AddEntryResponse" message="tns:IDirectoryService_AddEntry_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetEntry">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetEntry" message="tns:IDirectoryService_GetEntry_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetEntryResponse" message="tns:IDirectoryService_GetEntry_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetEntryById">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetEntryById" message="tns:IDirectoryService_GetEntryById_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetEntryByIdResponse" message="tns:IDirectoryService_GetEntryById_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetEntriesInInstance">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetEntriesInInstance" message="tns:IDirectoryService_GetEntriesInInstance_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetEntriesInInstanceResponse" message="tns:IDirectoryService_GetEntriesInInstance_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetEntries">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetEntries" message="tns:IDirectoryService_GetEntries_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/GetEntriesResponse" message="tns:IDirectoryService_GetEntries_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateEntry">
+			<wsdl:input wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/UpdateEntry" message="tns:IDirectoryService_UpdateEntry_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.elliemae.com/encompass/directory/IDirectoryService/UpdateEntryResponse" message="tns:IDirectoryService_UpdateEntry_OutputMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

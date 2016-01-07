@@ -1,0 +1,3610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://loancenter.elliemae.com/service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://loancenter.elliemae.com/service/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://loancenter.elliemae.com/service/">
+      <s:element name="registerConsentDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageEntityGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageEntityId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registerConsentDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registerConsentDocumentResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageEntityId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsentDocumentPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="consentGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageEntityId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsentDocumentPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsentDocumentPackageResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="consentGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageEntityId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPackageEntityHasData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageEntityId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="filesize" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPackageEntityHasDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetPackageEntityHasDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncompassLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="encompassUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="encompassPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncompassLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EncompassLoginResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secQuestion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secAnswer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateAccountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreSignupAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secQuestion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secAnswer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreSignupAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PreSignupAccountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignupAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="activationid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignupAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SignupAccountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignupAccountWithoutActivation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secQuestion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secAnswer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="larname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="laremail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignupAccountWithoutActivationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SignupAccountWithoutActivationResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newuserid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="increment" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNewUserInfoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newuser" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ispropaddress" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="islockedout" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="issignedup" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserInfoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivationUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="activationid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivationUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetActivationUserInfoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="expireDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="defaultPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePasswordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForgotPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="urlNotSignedUp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForgotPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ForgotPasswordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetWebcenterPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="defaultpassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetWebcenterPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetWebcenterPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBorrowerInfoByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBorrowerInfoByEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBorrowerInfoByEmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnlockUserAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnlockUserAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnlockUserAccountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserActivationId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserActivationIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserActivationIdResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="passcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="activationid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewUserIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebsiteDomain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="websiteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebsiteDomainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebsiteDomainResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUseridFromUserEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUseridFromUserEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUseridFromUserEmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newFirstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newLastname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAccountInformationResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLoansResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoansByArchiveType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="archiveType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoansByArchiveTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLoansByArchiveTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArchiveLoan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loanid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="archiveType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArchiveLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ArchiveLoanResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTPOLoanMessageCounts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loanguids" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTPOLoanMessageCountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTPOLoanMessageCountsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTPOLoanMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loanguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTPOLoanMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTPOLoanMessagesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoanDetailPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loanid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwdguid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="viewed" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoanDetailPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLoanDetailPackageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageUserDetailsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageUserDetailsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageUserDetailsInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageESignInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAutoSign" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageESignInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageESignInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageUserSignatures">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageUserSignaturesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageUserSignaturesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageUserSignaturesESignUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageUserSignaturesESignUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageUserSignaturesESignUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageEntityInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityUploadInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageEntityType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityUploadInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageEntityUploadInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityTypeInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="typeName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityTypeInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageEntityTypeInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageEntityGuid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageEntityDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityInfoESignable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bESignable" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityInfoESignableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageEntityInfoESignableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityInfoESignUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usertype" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityInfoESignUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageEntityInfoESignUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPackageEntityInfoESignUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usertype" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPackageEntityInfoESignUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPackageEntityInfoESignUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityESignInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageEntityid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityESignInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageEntityESignInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityUserESignInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageEntityid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageEntityUserESignInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageEntityUserESignInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageUserESignInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageUserESignInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageUserESignInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageDetailsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAutoSign" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageDetailsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageDetailsInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPackageUserViewed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPackageUserViewedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetPackageUserViewedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserEmailFromUserid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="esignuserguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserEmailFromUseridResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserEmailFromUseridResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="esignuseremail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveConsentWetSignature">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accepted" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateUpdated" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveConsentWetSignatureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveConsentWetSignatureResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateUpdated" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveNonESignConsentInfoESignatures">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accepted" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateUpdated" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveNonESignConsentInfoESignaturesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveNonESignConsentInfoESignaturesResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateUpdated" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveConsentESignature">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accepted" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="eUserId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateUpdated" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveConsentESignatureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveConsentESignatureResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateUpdated" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageTypeResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsESignatures">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsESignaturesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsESignaturesResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bESignatures" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetESignComplete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="borrowerType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="eUserId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eSignCompleteBorrower" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="eSignCompleteCoBorrower" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAutoSign" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetESignCompleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetESignCompleteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetESignPackageInVault">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bInVault" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetESignPackageInVaultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetESignPackageInVaultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsLegacyPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageGuid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsLegacyPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsLegacyPackageResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bLegacyPackage" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsCoBorrowerInLoan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="svrguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsCoBorrowerInLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsCoBorrowerInLoanResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bCoBorrowerExists" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPackagePartialSigned">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPackagePartialSignedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsPackagePartialSignedResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bPartialSigned" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartSigningSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartSigningSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartSigningSessionResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAllowSign" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopSigningSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopSigningSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StopSigningSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPackageSignedCurrentUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPackageSignedCurrentUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsPackageSignedCurrentUserResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSigned" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetESignPwdAttemptCnt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docguid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="eUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetESignPwdAttemptCntResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetESignPwdAttemptCntResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBorrowersDecline">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="documentid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBorrowersDeclineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBorrowersDeclineResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBorrowerNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="svrguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBorrowerNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBorrowerNamesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBorrowerNames2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="svrguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBorrowerNames2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBorrowerNames2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageSignerNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bAutoSign" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageSignerNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageSignerNamesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePackageSignerNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usertype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="signerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePackageSignerNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePackageSignerNamesResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSignerNameUpdated" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetESignUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="svrguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetESignUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetESignUserInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetESignUserInfoFromeUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="eUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetESignUserInfoFromeUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetESignUserInfoFromeUserIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateESignUserAccountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="eUserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateESignUserAccountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateESignUserAccountInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoanInfoFromPackageID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoanInfoFromPackageIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLoanInfoFromPackageIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoanInfoFromPackageGuid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageGuid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoanInfoFromPackageGuidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLoanInfoFromPackageGuidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPackageESignToWetSign">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPackageESignToWetSignResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetPackageESignToWetSignResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetESignIdentityVerified">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docguid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="eUserId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bESignIdentityVerified" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetESignIdentityVerifiedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetESignIdentityVerifiedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerIDFromPackageID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerIDFromPackageIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerIDFromPackageIDResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateForDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateForDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateForDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageOriginatorData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bPackageOriginator" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageOriginatorDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageOriginatorDataResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bPackageOriginator" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendUploadedDocumentNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="defaultPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uploadedDocumentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loanid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senderemail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sendername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendUploadedDocumentNotificationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendUploadedRequestEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="files" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendUploadedRequestEmailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateRequestUploadNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emsiteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uploadedDocumentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageGuid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateRequestUploadNotificationResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="registerConsentDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:registerConsentDocument" />
+  </wsdl:message>
+  <wsdl:message name="registerConsentDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:registerConsentDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsentDocumentPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsentDocumentPackage" />
+  </wsdl:message>
+  <wsdl:message name="GetConsentDocumentPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsentDocumentPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPackageEntityHasDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPackageEntityHasData" />
+  </wsdl:message>
+  <wsdl:message name="SetPackageEntityHasDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPackageEntityHasDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="EncompassLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:EncompassLogin" />
+  </wsdl:message>
+  <wsdl:message name="EncompassLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:EncompassLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAccount" />
+  </wsdl:message>
+  <wsdl:message name="CreateAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="PreSignupAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:PreSignupAccount" />
+  </wsdl:message>
+  <wsdl:message name="PreSignupAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:PreSignupAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignupAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:SignupAccount" />
+  </wsdl:message>
+  <wsdl:message name="SignupAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:SignupAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignupAccountWithoutActivationSoapIn">
+    <wsdl:part name="parameters" element="tns:SignupAccountWithoutActivation" />
+  </wsdl:message>
+  <wsdl:message name="SignupAccountWithoutActivationSoapOut">
+    <wsdl:part name="parameters" element="tns:SignupAccountWithoutActivationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNewUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivationUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActivationUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetActivationUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivationUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForgotPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ForgotPassword" />
+  </wsdl:message>
+  <wsdl:message name="ForgotPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ForgotPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetWebcenterPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetWebcenterPassword" />
+  </wsdl:message>
+  <wsdl:message name="ResetWebcenterPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetWebcenterPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBorrowerInfoByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBorrowerInfoByEmail" />
+  </wsdl:message>
+  <wsdl:message name="GetBorrowerInfoByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBorrowerInfoByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnlockUserAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:UnlockUserAccount" />
+  </wsdl:message>
+  <wsdl:message name="UnlockUserAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:UnlockUserAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserActivationIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserActivationId" />
+  </wsdl:message>
+  <wsdl:message name="GetUserActivationIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserActivationIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetNewUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebsiteDomainSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebsiteDomain" />
+  </wsdl:message>
+  <wsdl:message name="GetWebsiteDomainSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebsiteDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUseridFromUserEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUseridFromUserEmail" />
+  </wsdl:message>
+  <wsdl:message name="GetUseridFromUserEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUseridFromUserEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAccountInformation" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAccountInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoansSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLoans" />
+  </wsdl:message>
+  <wsdl:message name="GetLoansSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLoansResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoansByArchiveTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLoansByArchiveType" />
+  </wsdl:message>
+  <wsdl:message name="GetLoansByArchiveTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLoansByArchiveTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ArchiveLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:ArchiveLoan" />
+  </wsdl:message>
+  <wsdl:message name="ArchiveLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:ArchiveLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTPOLoanMessageCountsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTPOLoanMessageCounts" />
+  </wsdl:message>
+  <wsdl:message name="GetTPOLoanMessageCountsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTPOLoanMessageCountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTPOLoanMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTPOLoanMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetTPOLoanMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTPOLoanMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanDetailPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLoanDetailPackage" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanDetailPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLoanDetailPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageUserDetailsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageUserDetailsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageUserDetailsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageUserDetailsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageESignInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageESignInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageESignInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageESignInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageUserSignaturesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageUserSignatures" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageUserSignaturesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageUserSignaturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageUserSignaturesESignUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageUserSignaturesESignUser" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageUserSignaturesESignUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageUserSignaturesESignUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityUploadInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityUploadInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityUploadInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityUploadInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityTypeInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityTypeInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityTypeInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityTypeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityInfoESignableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityInfoESignable" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityInfoESignableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityInfoESignableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityInfoESignUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityInfoESignUser" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityInfoESignUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityInfoESignUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPackageEntityInfoESignUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPackageEntityInfoESignUser" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPackageEntityInfoESignUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPackageEntityInfoESignUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityESignInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityESignInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityESignInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityESignInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityUserESignInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityUserESignInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageEntityUserESignInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageEntityUserESignInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageUserESignInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageUserESignInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageUserESignInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageUserESignInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageDetailsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageDetailsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageDetailsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageDetailsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPackageUserViewedSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPackageUserViewed" />
+  </wsdl:message>
+  <wsdl:message name="SetPackageUserViewedSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPackageUserViewedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailFromUseridSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserEmailFromUserid" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailFromUseridSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserEmailFromUseridResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveConsentWetSignatureSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveConsentWetSignature" />
+  </wsdl:message>
+  <wsdl:message name="SaveConsentWetSignatureSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveConsentWetSignatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveNonESignConsentInfoESignaturesSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveNonESignConsentInfoESignatures" />
+  </wsdl:message>
+  <wsdl:message name="SaveNonESignConsentInfoESignaturesSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveNonESignConsentInfoESignaturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveConsentESignatureSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveConsentESignature" />
+  </wsdl:message>
+  <wsdl:message name="SaveConsentESignatureSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveConsentESignatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageType" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsESignaturesSoapIn">
+    <wsdl:part name="parameters" element="tns:IsESignatures" />
+  </wsdl:message>
+  <wsdl:message name="IsESignaturesSoapOut">
+    <wsdl:part name="parameters" element="tns:IsESignaturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetESignCompleteSoapIn">
+    <wsdl:part name="parameters" element="tns:SetESignComplete" />
+  </wsdl:message>
+  <wsdl:message name="SetESignCompleteSoapOut">
+    <wsdl:part name="parameters" element="tns:SetESignCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetESignPackageInVaultSoapIn">
+    <wsdl:part name="parameters" element="tns:SetESignPackageInVault" />
+  </wsdl:message>
+  <wsdl:message name="SetESignPackageInVaultSoapOut">
+    <wsdl:part name="parameters" element="tns:SetESignPackageInVaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsLegacyPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:IsLegacyPackage" />
+  </wsdl:message>
+  <wsdl:message name="IsLegacyPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:IsLegacyPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsCoBorrowerInLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:IsCoBorrowerInLoan" />
+  </wsdl:message>
+  <wsdl:message name="IsCoBorrowerInLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:IsCoBorrowerInLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsPackagePartialSignedSoapIn">
+    <wsdl:part name="parameters" element="tns:IsPackagePartialSigned" />
+  </wsdl:message>
+  <wsdl:message name="IsPackagePartialSignedSoapOut">
+    <wsdl:part name="parameters" element="tns:IsPackagePartialSignedResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartSigningSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:StartSigningSession" />
+  </wsdl:message>
+  <wsdl:message name="StartSigningSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:StartSigningSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="StopSigningSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:StopSigningSession" />
+  </wsdl:message>
+  <wsdl:message name="StopSigningSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:StopSigningSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsPackageSignedCurrentUserSoapIn">
+    <wsdl:part name="parameters" element="tns:IsPackageSignedCurrentUser" />
+  </wsdl:message>
+  <wsdl:message name="IsPackageSignedCurrentUserSoapOut">
+    <wsdl:part name="parameters" element="tns:IsPackageSignedCurrentUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetESignPwdAttemptCntSoapIn">
+    <wsdl:part name="parameters" element="tns:SetESignPwdAttemptCnt" />
+  </wsdl:message>
+  <wsdl:message name="SetESignPwdAttemptCntSoapOut">
+    <wsdl:part name="parameters" element="tns:SetESignPwdAttemptCntResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBorrowersDeclineSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBorrowersDecline" />
+  </wsdl:message>
+  <wsdl:message name="GetBorrowersDeclineSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBorrowersDeclineResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBorrowerNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBorrowerNames" />
+  </wsdl:message>
+  <wsdl:message name="GetBorrowerNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBorrowerNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBorrowerNames2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetBorrowerNames2" />
+  </wsdl:message>
+  <wsdl:message name="GetBorrowerNames2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetBorrowerNames2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageSignerNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageSignerNames" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageSignerNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageSignerNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePackageSignerNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePackageSignerNames" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePackageSignerNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePackageSignerNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetESignUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetESignUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetESignUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetESignUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetESignUserInfoFromeUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetESignUserInfoFromeUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetESignUserInfoFromeUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetESignUserInfoFromeUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateESignUserAccountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateESignUserAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateESignUserAccountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateESignUserAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanInfoFromPackageIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLoanInfoFromPackageID" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanInfoFromPackageIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLoanInfoFromPackageIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanInfoFromPackageGuidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLoanInfoFromPackageGuid" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanInfoFromPackageGuidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLoanInfoFromPackageGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPackageESignToWetSignSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPackageESignToWetSign" />
+  </wsdl:message>
+  <wsdl:message name="SetPackageESignToWetSignSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPackageESignToWetSignResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetESignIdentityVerifiedSoapIn">
+    <wsdl:part name="parameters" element="tns:SetESignIdentityVerified" />
+  </wsdl:message>
+  <wsdl:message name="SetESignIdentityVerifiedSoapOut">
+    <wsdl:part name="parameters" element="tns:SetESignIdentityVerifiedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerIDFromPackageIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerIDFromPackageID" />
+  </wsdl:message>
+  <wsdl:message name="GetServerIDFromPackageIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerIDFromPackageIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateForDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateForDocument" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateForDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateForDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageOriginatorDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackageOriginatorData" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageOriginatorDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageOriginatorDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendUploadedDocumentNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:SendUploadedDocumentNotification" />
+  </wsdl:message>
+  <wsdl:message name="SendUploadedDocumentNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:SendUploadedDocumentNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendUploadedRequestEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendUploadedRequestEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendUploadedRequestEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendUploadedRequestEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateRequestUploadNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateRequestUploadNotification" />
+  </wsdl:message>
+  <wsdl:message name="CreateRequestUploadNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateRequestUploadNotificationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EncompassWSSoap">
+    <wsdl:operation name="registerConsentDocument">
+      <wsdl:input message="tns:registerConsentDocumentSoapIn" />
+      <wsdl:output message="tns:registerConsentDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsentDocumentPackage">
+      <wsdl:input message="tns:GetConsentDocumentPackageSoapIn" />
+      <wsdl:output message="tns:GetConsentDocumentPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPackageEntityHasData">
+      <wsdl:input message="tns:SetPackageEntityHasDataSoapIn" />
+      <wsdl:output message="tns:SetPackageEntityHasDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EncompassLogin">
+      <wsdl:input message="tns:EncompassLoginSoapIn" />
+      <wsdl:output message="tns:EncompassLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <wsdl:input message="tns:CreateAccountSoapIn" />
+      <wsdl:output message="tns:CreateAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreSignupAccount">
+      <wsdl:input message="tns:PreSignupAccountSoapIn" />
+      <wsdl:output message="tns:PreSignupAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignupAccount">
+      <wsdl:input message="tns:SignupAccountSoapIn" />
+      <wsdl:output message="tns:SignupAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignupAccountWithoutActivation">
+      <wsdl:input message="tns:SignupAccountWithoutActivationSoapIn" />
+      <wsdl:output message="tns:SignupAccountWithoutActivationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewUserInfo">
+      <wsdl:input message="tns:GetNewUserInfoSoapIn" />
+      <wsdl:output message="tns:GetNewUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoSoapIn" />
+      <wsdl:output message="tns:GetUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivationUserInfo">
+      <wsdl:input message="tns:GetActivationUserInfoSoapIn" />
+      <wsdl:output message="tns:GetActivationUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:input message="tns:UpdatePasswordSoapIn" />
+      <wsdl:output message="tns:UpdatePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <wsdl:input message="tns:ForgotPasswordSoapIn" />
+      <wsdl:output message="tns:ForgotPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetWebcenterPassword">
+      <wsdl:input message="tns:ResetWebcenterPasswordSoapIn" />
+      <wsdl:output message="tns:ResetWebcenterPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input message="tns:DeleteUserSoapIn" />
+      <wsdl:output message="tns:DeleteUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowerInfoByEmail">
+      <wsdl:input message="tns:GetBorrowerInfoByEmailSoapIn" />
+      <wsdl:output message="tns:GetBorrowerInfoByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockUserAccount">
+      <wsdl:input message="tns:UnlockUserAccountSoapIn" />
+      <wsdl:output message="tns:UnlockUserAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserActivationId">
+      <wsdl:input message="tns:GetUserActivationIdSoapIn" />
+      <wsdl:output message="tns:GetUserActivationIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewUserId">
+      <wsdl:input message="tns:GetNewUserIdSoapIn" />
+      <wsdl:output message="tns:GetNewUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebsiteDomain">
+      <wsdl:input message="tns:GetWebsiteDomainSoapIn" />
+      <wsdl:output message="tns:GetWebsiteDomainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUseridFromUserEmail">
+      <wsdl:input message="tns:GetUseridFromUserEmailSoapIn" />
+      <wsdl:output message="tns:GetUseridFromUserEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountInformation">
+      <wsdl:input message="tns:UpdateAccountInformationSoapIn" />
+      <wsdl:output message="tns:UpdateAccountInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoans">
+      <wsdl:input message="tns:GetLoansSoapIn" />
+      <wsdl:output message="tns:GetLoansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoansByArchiveType">
+      <wsdl:input message="tns:GetLoansByArchiveTypeSoapIn" />
+      <wsdl:output message="tns:GetLoansByArchiveTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveLoan">
+      <wsdl:input message="tns:ArchiveLoanSoapIn" />
+      <wsdl:output message="tns:ArchiveLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTPOLoanMessageCounts">
+      <wsdl:input message="tns:GetTPOLoanMessageCountsSoapIn" />
+      <wsdl:output message="tns:GetTPOLoanMessageCountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTPOLoanMessages">
+      <wsdl:input message="tns:GetTPOLoanMessagesSoapIn" />
+      <wsdl:output message="tns:GetTPOLoanMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanDetailPackage">
+      <wsdl:input message="tns:GetLoanDetailPackageSoapIn" />
+      <wsdl:output message="tns:GetLoanDetailPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageUserDetailsInfo">
+      <wsdl:input message="tns:GetPackageUserDetailsInfoSoapIn" />
+      <wsdl:output message="tns:GetPackageUserDetailsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageESignInfo">
+      <wsdl:input message="tns:GetPackageESignInfoSoapIn" />
+      <wsdl:output message="tns:GetPackageESignInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageUserSignatures">
+      <wsdl:input message="tns:GetPackageUserSignaturesSoapIn" />
+      <wsdl:output message="tns:GetPackageUserSignaturesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageUserSignaturesESignUser">
+      <wsdl:input message="tns:GetPackageUserSignaturesESignUserSoapIn" />
+      <wsdl:output message="tns:GetPackageUserSignaturesESignUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityInfo">
+      <wsdl:input message="tns:GetPackageEntityInfoSoapIn" />
+      <wsdl:output message="tns:GetPackageEntityInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityUploadInfo">
+      <wsdl:input message="tns:GetPackageEntityUploadInfoSoapIn" />
+      <wsdl:output message="tns:GetPackageEntityUploadInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityTypeInfo">
+      <wsdl:input message="tns:GetPackageEntityTypeInfoSoapIn" />
+      <wsdl:output message="tns:GetPackageEntityTypeInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityDetails">
+      <wsdl:input message="tns:GetPackageEntityDetailsSoapIn" />
+      <wsdl:output message="tns:GetPackageEntityDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityInfoESignable">
+      <wsdl:input message="tns:GetPackageEntityInfoESignableSoapIn" />
+      <wsdl:output message="tns:GetPackageEntityInfoESignableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityInfoESignUser">
+      <wsdl:input message="tns:GetPackageEntityInfoESignUserSoapIn" />
+      <wsdl:output message="tns:GetPackageEntityInfoESignUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPackageEntityInfoESignUser">
+      <wsdl:input message="tns:GetAllPackageEntityInfoESignUserSoapIn" />
+      <wsdl:output message="tns:GetAllPackageEntityInfoESignUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityESignInfo">
+      <wsdl:input message="tns:GetPackageEntityESignInfoSoapIn" />
+      <wsdl:output message="tns:GetPackageEntityESignInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityUserESignInfo">
+      <wsdl:input message="tns:GetPackageEntityUserESignInfoSoapIn" />
+      <wsdl:output message="tns:GetPackageEntityUserESignInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageUserESignInfo">
+      <wsdl:input message="tns:GetPackageUserESignInfoSoapIn" />
+      <wsdl:output message="tns:GetPackageUserESignInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageDetailsInfo">
+      <wsdl:input message="tns:GetPackageDetailsInfoSoapIn" />
+      <wsdl:output message="tns:GetPackageDetailsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPackageUserViewed">
+      <wsdl:input message="tns:SetPackageUserViewedSoapIn" />
+      <wsdl:output message="tns:SetPackageUserViewedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmailFromUserid">
+      <wsdl:input message="tns:GetUserEmailFromUseridSoapIn" />
+      <wsdl:output message="tns:GetUserEmailFromUseridSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsentWetSignature">
+      <wsdl:input message="tns:SaveConsentWetSignatureSoapIn" />
+      <wsdl:output message="tns:SaveConsentWetSignatureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveNonESignConsentInfoESignatures">
+      <wsdl:input message="tns:SaveNonESignConsentInfoESignaturesSoapIn" />
+      <wsdl:output message="tns:SaveNonESignConsentInfoESignaturesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsentESignature">
+      <wsdl:input message="tns:SaveConsentESignatureSoapIn" />
+      <wsdl:output message="tns:SaveConsentESignatureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageType">
+      <wsdl:input message="tns:GetPackageTypeSoapIn" />
+      <wsdl:output message="tns:GetPackageTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsESignatures">
+      <wsdl:input message="tns:IsESignaturesSoapIn" />
+      <wsdl:output message="tns:IsESignaturesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetESignComplete">
+      <wsdl:input message="tns:SetESignCompleteSoapIn" />
+      <wsdl:output message="tns:SetESignCompleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetESignPackageInVault">
+      <wsdl:input message="tns:SetESignPackageInVaultSoapIn" />
+      <wsdl:output message="tns:SetESignPackageInVaultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsLegacyPackage">
+      <wsdl:input message="tns:IsLegacyPackageSoapIn" />
+      <wsdl:output message="tns:IsLegacyPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsCoBorrowerInLoan">
+      <wsdl:input message="tns:IsCoBorrowerInLoanSoapIn" />
+      <wsdl:output message="tns:IsCoBorrowerInLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPackagePartialSigned">
+      <wsdl:input message="tns:IsPackagePartialSignedSoapIn" />
+      <wsdl:output message="tns:IsPackagePartialSignedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartSigningSession">
+      <wsdl:input message="tns:StartSigningSessionSoapIn" />
+      <wsdl:output message="tns:StartSigningSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StopSigningSession">
+      <wsdl:input message="tns:StopSigningSessionSoapIn" />
+      <wsdl:output message="tns:StopSigningSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPackageSignedCurrentUser">
+      <wsdl:input message="tns:IsPackageSignedCurrentUserSoapIn" />
+      <wsdl:output message="tns:IsPackageSignedCurrentUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetESignPwdAttemptCnt">
+      <wsdl:input message="tns:SetESignPwdAttemptCntSoapIn" />
+      <wsdl:output message="tns:SetESignPwdAttemptCntSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowersDecline">
+      <wsdl:input message="tns:GetBorrowersDeclineSoapIn" />
+      <wsdl:output message="tns:GetBorrowersDeclineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowerNames">
+      <wsdl:input message="tns:GetBorrowerNamesSoapIn" />
+      <wsdl:output message="tns:GetBorrowerNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowerNames2">
+      <wsdl:input message="tns:GetBorrowerNames2SoapIn" />
+      <wsdl:output message="tns:GetBorrowerNames2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageSignerNames">
+      <wsdl:input message="tns:GetPackageSignerNamesSoapIn" />
+      <wsdl:output message="tns:GetPackageSignerNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePackageSignerNames">
+      <wsdl:input message="tns:UpdatePackageSignerNamesSoapIn" />
+      <wsdl:output message="tns:UpdatePackageSignerNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetESignUserInfo">
+      <wsdl:input message="tns:GetESignUserInfoSoapIn" />
+      <wsdl:output message="tns:GetESignUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetESignUserInfoFromeUserId">
+      <wsdl:input message="tns:GetESignUserInfoFromeUserIdSoapIn" />
+      <wsdl:output message="tns:GetESignUserInfoFromeUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateESignUserAccountInfo">
+      <wsdl:input message="tns:UpdateESignUserAccountInfoSoapIn" />
+      <wsdl:output message="tns:UpdateESignUserAccountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanInfoFromPackageID">
+      <wsdl:input message="tns:GetLoanInfoFromPackageIDSoapIn" />
+      <wsdl:output message="tns:GetLoanInfoFromPackageIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanInfoFromPackageGuid">
+      <wsdl:input message="tns:GetLoanInfoFromPackageGuidSoapIn" />
+      <wsdl:output message="tns:GetLoanInfoFromPackageGuidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPackageESignToWetSign">
+      <wsdl:input message="tns:SetPackageESignToWetSignSoapIn" />
+      <wsdl:output message="tns:SetPackageESignToWetSignSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetESignIdentityVerified">
+      <wsdl:input message="tns:SetESignIdentityVerifiedSoapIn" />
+      <wsdl:output message="tns:SetESignIdentityVerifiedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerIDFromPackageID">
+      <wsdl:input message="tns:GetServerIDFromPackageIDSoapIn" />
+      <wsdl:output message="tns:GetServerIDFromPackageIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateForDocument">
+      <wsdl:input message="tns:AuthenticateForDocumentSoapIn" />
+      <wsdl:output message="tns:AuthenticateForDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageOriginatorData">
+      <wsdl:input message="tns:GetPackageOriginatorDataSoapIn" />
+      <wsdl:output message="tns:GetPackageOriginatorDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendUploadedDocumentNotification">
+      <wsdl:input message="tns:SendUploadedDocumentNotificationSoapIn" />
+      <wsdl:output message="tns:SendUploadedDocumentNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendUploadedRequestEmail">
+      <wsdl:input message="tns:SendUploadedRequestEmailSoapIn" />
+      <wsdl:output message="tns:SendUploadedRequestEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRequestUploadNotification">
+      <wsdl:input message="tns:CreateRequestUploadNotificationSoapIn" />
+      <wsdl:output message="tns:CreateRequestUploadNotificationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EncompassWSSoap" type="tns:EncompassWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="registerConsentDocument">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/registerConsentDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsentDocumentPackage">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetConsentDocumentPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPackageEntityHasData">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SetPackageEntityHasData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncompassLogin">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/EncompassLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreSignupAccount">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/PreSignupAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignupAccount">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SignupAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignupAccountWithoutActivation">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SignupAccountWithoutActivation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewUserInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetNewUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivationUserInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetActivationUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/ForgotPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetWebcenterPassword">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/ResetWebcenterPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowerInfoByEmail">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetBorrowerInfoByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockUserAccount">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/UnlockUserAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserActivationId">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetUserActivationId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewUserId">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetNewUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebsiteDomain">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetWebsiteDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUseridFromUserEmail">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetUseridFromUserEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountInformation">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/UpdateAccountInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoans">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetLoans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoansByArchiveType">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetLoansByArchiveType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveLoan">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/ArchiveLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTPOLoanMessageCounts">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetTPOLoanMessageCounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTPOLoanMessages">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetTPOLoanMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanDetailPackage">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetLoanDetailPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageUserDetailsInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageUserDetailsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageESignInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageESignInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageUserSignatures">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageUserSignatures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageUserSignaturesESignUser">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageUserSignaturesESignUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityUploadInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityUploadInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityTypeInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityTypeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityDetails">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityInfoESignable">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityInfoESignable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityInfoESignUser">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityInfoESignUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPackageEntityInfoESignUser">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetAllPackageEntityInfoESignUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityESignInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityESignInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityUserESignInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityUserESignInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageUserESignInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageUserESignInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageDetailsInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageDetailsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPackageUserViewed">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SetPackageUserViewed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmailFromUserid">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetUserEmailFromUserid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsentWetSignature">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SaveConsentWetSignature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveNonESignConsentInfoESignatures">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SaveNonESignConsentInfoESignatures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsentESignature">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SaveConsentESignature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageType">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsESignatures">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/IsESignatures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetESignComplete">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SetESignComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetESignPackageInVault">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SetESignPackageInVault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsLegacyPackage">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/IsLegacyPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsCoBorrowerInLoan">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/IsCoBorrowerInLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPackagePartialSigned">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/IsPackagePartialSigned" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSigningSession">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/StartSigningSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopSigningSession">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/StopSigningSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPackageSignedCurrentUser">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/IsPackageSignedCurrentUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetESignPwdAttemptCnt">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SetESignPwdAttemptCnt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowersDecline">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetBorrowersDecline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowerNames">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetBorrowerNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowerNames2">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetBorrowerNames2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageSignerNames">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageSignerNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePackageSignerNames">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/UpdatePackageSignerNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetESignUserInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetESignUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetESignUserInfoFromeUserId">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetESignUserInfoFromeUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateESignUserAccountInfo">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/UpdateESignUserAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanInfoFromPackageID">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetLoanInfoFromPackageID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanInfoFromPackageGuid">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetLoanInfoFromPackageGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPackageESignToWetSign">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SetPackageESignToWetSign" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetESignIdentityVerified">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SetESignIdentityVerified" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerIDFromPackageID">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetServerIDFromPackageID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateForDocument">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/AuthenticateForDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageOriginatorData">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/GetPackageOriginatorData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUploadedDocumentNotification">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SendUploadedDocumentNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUploadedRequestEmail">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/SendUploadedRequestEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRequestUploadNotification">
+      <soap:operation soapAction="http://loancenter.elliemae.com/service/CreateRequestUploadNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EncompassWSSoap12" type="tns:EncompassWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="registerConsentDocument">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/registerConsentDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsentDocumentPackage">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetConsentDocumentPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPackageEntityHasData">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SetPackageEntityHasData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncompassLogin">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/EncompassLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreSignupAccount">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/PreSignupAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignupAccount">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SignupAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignupAccountWithoutActivation">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SignupAccountWithoutActivation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewUserInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetNewUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivationUserInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetActivationUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/ForgotPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetWebcenterPassword">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/ResetWebcenterPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowerInfoByEmail">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetBorrowerInfoByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockUserAccount">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/UnlockUserAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserActivationId">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetUserActivationId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewUserId">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetNewUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebsiteDomain">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetWebsiteDomain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUseridFromUserEmail">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetUseridFromUserEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountInformation">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/UpdateAccountInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoans">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetLoans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoansByArchiveType">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetLoansByArchiveType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveLoan">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/ArchiveLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTPOLoanMessageCounts">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetTPOLoanMessageCounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTPOLoanMessages">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetTPOLoanMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanDetailPackage">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetLoanDetailPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageUserDetailsInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageUserDetailsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageESignInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageESignInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageUserSignatures">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageUserSignatures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageUserSignaturesESignUser">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageUserSignaturesESignUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityUploadInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityUploadInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityTypeInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityTypeInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityDetails">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityInfoESignable">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityInfoESignable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityInfoESignUser">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityInfoESignUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPackageEntityInfoESignUser">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetAllPackageEntityInfoESignUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityESignInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityESignInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageEntityUserESignInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageEntityUserESignInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageUserESignInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageUserESignInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageDetailsInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageDetailsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPackageUserViewed">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SetPackageUserViewed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmailFromUserid">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetUserEmailFromUserid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsentWetSignature">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SaveConsentWetSignature" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveNonESignConsentInfoESignatures">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SaveNonESignConsentInfoESignatures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsentESignature">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SaveConsentESignature" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageType">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsESignatures">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/IsESignatures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetESignComplete">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SetESignComplete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetESignPackageInVault">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SetESignPackageInVault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsLegacyPackage">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/IsLegacyPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsCoBorrowerInLoan">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/IsCoBorrowerInLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPackagePartialSigned">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/IsPackagePartialSigned" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSigningSession">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/StartSigningSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopSigningSession">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/StopSigningSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPackageSignedCurrentUser">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/IsPackageSignedCurrentUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetESignPwdAttemptCnt">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SetESignPwdAttemptCnt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowersDecline">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetBorrowersDecline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowerNames">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetBorrowerNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowerNames2">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetBorrowerNames2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageSignerNames">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageSignerNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePackageSignerNames">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/UpdatePackageSignerNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetESignUserInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetESignUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetESignUserInfoFromeUserId">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetESignUserInfoFromeUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateESignUserAccountInfo">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/UpdateESignUserAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanInfoFromPackageID">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetLoanInfoFromPackageID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanInfoFromPackageGuid">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetLoanInfoFromPackageGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPackageESignToWetSign">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SetPackageESignToWetSign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetESignIdentityVerified">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SetESignIdentityVerified" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerIDFromPackageID">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetServerIDFromPackageID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateForDocument">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/AuthenticateForDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackageOriginatorData">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/GetPackageOriginatorData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUploadedDocumentNotification">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SendUploadedDocumentNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendUploadedRequestEmail">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/SendUploadedRequestEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRequestUploadNotification">
+      <soap12:operation soapAction="http://loancenter.elliemae.com/service/CreateRequestUploadNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EncompassWS">
+    <wsdl:port name="EncompassWSSoap" binding="tns:EncompassWSSoap">
+      <soap:address location="https://loancenter.elliemae.com/EncompassWS/EncompassWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EncompassWSSoap12" binding="tns:EncompassWSSoap12">
+      <soap12:address location="https://loancenter.elliemae.com/EncompassWS/EncompassWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

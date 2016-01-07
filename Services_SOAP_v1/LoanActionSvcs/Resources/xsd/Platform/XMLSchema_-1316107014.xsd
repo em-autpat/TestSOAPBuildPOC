@@ -1,0 +1,99 @@
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.elliemae.com/encompass/platform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elliemae.com/encompass/platform" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+	<xs:import schemaLocation="XMLSchema_-1383113767.xsd" namespace="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+	<xs:import schemaLocation="XMLSchema_-1249100261.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+	<xs:complexType name="LoanRegisterRequest.LoanRegisterRequestBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Entities" nillable="true" type="tns:EmListOfstring"/>
+			<xs:element name="Format" type="q1:PayloadFormatType" xmlns:q1="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+			<xs:element name="LoanData" nillable="true" type="xs:string"/>
+			<xs:element name="LoanId" type="ser:guid"/>
+			<xs:element name="RegisterDate" type="xs:dateTime"/>
+			<xs:element name="Version" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="LoanRegisterRequest.LoanRegisterRequestBody" nillable="true" type="tns:LoanRegisterRequest.LoanRegisterRequestBody"/>
+	<xs:complexType name="EmListOfstring">
+		<xs:annotation>
+			<xs:appinfo>
+				<GenericType Name="EmListOf{0}{#}" Namespace="http://www.elliemae.com/encompass/platform" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+					<GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema"/>
+				</GenericType>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="EmListOfstring" nillable="true" type="tns:EmListOfstring"/>
+	<xs:element name="LoanRegisterRequest" nillable="true" type="tns:LoanRegisterRequest.LoanRegisterRequestBody"/>
+	<xs:complexType name="SecurityContext">
+		<xs:sequence>
+			<xs:element name="Created" nillable="true" type="xs:dateTime"/>
+			<xs:element name="Realm" nillable="true" type="xs:string"/>
+			<xs:element name="SessionId" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TokenData" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="TokenType" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UserName" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SecurityContext" nillable="true" type="tns:SecurityContext"/>
+	<xs:complexType name="LoanRegisterResponse.LoanRegisterResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="LoanData" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="LoanId" type="ser:guid"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="LoanRegisterResponse.LoanRegisterResponseBody" nillable="true" type="tns:LoanRegisterResponse.LoanRegisterResponseBody"/>
+	<xs:element name="LoanRegisterResponse" nillable="true" type="tns:LoanRegisterResponse.LoanRegisterResponseBody"/>
+	<xs:complexType name="LoanSubmitRequest.LoanSubmitRequestBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Entities" nillable="true" type="tns:EmListOfstring"/>
+			<xs:element name="Format" type="q2:PayloadFormatType" xmlns:q2="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+			<xs:element name="LoanData" nillable="true" type="xs:string"/>
+			<xs:element name="LoanId" type="ser:guid"/>
+			<xs:element name="SubmitDate" type="xs:dateTime"/>
+			<xs:element name="Version" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="LoanSubmitRequest.LoanSubmitRequestBody" nillable="true" type="tns:LoanSubmitRequest.LoanSubmitRequestBody"/>
+	<xs:element name="LoanSubmitRequest" nillable="true" type="tns:LoanSubmitRequest.LoanSubmitRequestBody"/>
+	<xs:complexType name="LoanSubmitResponse.LoanSubmitResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="LoanData" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="LoanId" type="ser:guid"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="LoanSubmitResponse.LoanSubmitResponseBody" nillable="true" type="tns:LoanSubmitResponse.LoanSubmitResponseBody"/>
+	<xs:element name="LoanSubmitResponse" nillable="true" type="tns:LoanSubmitResponse.LoanSubmitResponseBody"/>
+	<xs:complexType name="LoanChangedCircumstanceRequest.LoanChangedCircumstanceRequestBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Entities" nillable="true" type="tns:EmListOfstring"/>
+			<xs:element name="Format" type="q3:PayloadFormatType" xmlns:q3="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+			<xs:element name="LoanData" nillable="true" type="xs:string"/>
+			<xs:element name="LoanId" type="ser:guid"/>
+			<xs:element name="Version" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="LoanChangedCircumstanceRequest.LoanChangedCircumstanceRequestBody" nillable="true" type="tns:LoanChangedCircumstanceRequest.LoanChangedCircumstanceRequestBody"/>
+	<xs:element name="LoanChangedCircumstanceRequest" nillable="true" type="tns:LoanChangedCircumstanceRequest.LoanChangedCircumstanceRequestBody"/>
+	<xs:complexType name="LoanChangedCircumstanceResponse.LoanChangedCircumstanceResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="LoanData" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="LoanId" type="ser:guid"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="LoanChangedCircumstanceResponse.LoanChangedCircumstanceResponseBody" nillable="true" type="tns:LoanChangedCircumstanceResponse.LoanChangedCircumstanceResponseBody"/>
+	<xs:element name="LoanChangedCircumstanceResponse" nillable="true" type="tns:LoanChangedCircumstanceResponse.LoanChangedCircumstanceResponseBody"/>
+</xs:schema>

@@ -1,0 +1,240 @@
+<wsdl:definitions name="UserService" targetNamespace="http://www.elliemae.com/services/settingservice" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.elliemae.com/services/settingservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sec="http://www.elliemae.com/services/security">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.elliemae.com/services/settingservice" elementFormDefault="qualified">
+			<xsd:include schemaLocation="../../xsd/Services/SettingService.xsd"/>
+			<xsd:import schemaLocation="../../../../../Security_SOAP_v1/Shared/SecuritySvc.xsd" namespace="http://www.elliemae.com/services/security"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GetSettingRequest">
+		<wsdl:part element="tns:GetSettingRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetSettingResponse">
+		<wsdl:part element="tns:GetSettingResponse" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductPricingRequest">
+		<wsdl:part element="tns:GetProductPricingRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductPricingResponse">
+		<wsdl:part element="tns:GetProductPricingResponse" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetExternalCompanyNamesRequestMsg">
+		<wsdl:part element="tns:GetExternalCompanyNamesRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetExternalCompanyNamesResponseMsg">
+		<wsdl:part element="tns:GetExternalCompanyNamesResponse" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetExportServiceSettingsRequestMsg">
+		<wsdl:part element="tns:GetExportServiceSettingsRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetExportServiceSettingsResponseMsg">
+		<wsdl:part element="tns:GetExportServiceSettingsResponse" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetExternalContactsRequestMsg">
+		<wsdl:part element="tns:GetExternalContactsRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetExternalContactsResponseMsg">
+		<wsdl:part element="tns:GetExternalContactsResponse" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetExternalContactsByUserIdRequestMsg">
+		<wsdl:part element="tns:GetExternalContactsByUserIdRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetExternalContactsByUserIdResponseMsg">
+		<wsdl:part element="tns:GetExternalContactsByUserIdResponse" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetExternalOrganizationRequestMsg">
+		<wsdl:part element="tns:GetExternalOrganizationRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="GetExternalOrganizationResponseMsg">
+		<wsdl:part element="tns:GetExternalOrganizationResponse" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteExternalContactRequestMsg">
+		<wsdl:part element="tns:DeleteExternalContactRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteExternalContactResponseMsg">
+		<wsdl:part element="tns:DeleteExternalContactResponse" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="CreateExternalContactRequestMsg">
+		<wsdl:part element="tns:CreateExternalContactRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="CreateExternalContactResponseMsg">
+		<wsdl:part element="tns:CreateExternalContactResponse" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateExternalContactRequestMsg">
+		<wsdl:part element="tns:UpdateExternalContactRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateExternalContactResponseMsg">
+		<wsdl:part element="tns:UpdateExternalContactResponse" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="ResetUserPasswordRequestMsg">
+		<wsdl:part element="tns:ResetUserPasswordRequest" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="ResetUserPasswordResponseMsg">
+		<wsdl:part element="tns:ResetUserPasswordResponse" name="body"/>
+	</wsdl:message>
+	<wsdl:message name="SecurityContextHeader">
+		<wsdl:part name="header" element="sec:SecurityContext"/>
+	</wsdl:message>
+	<wsdl:portType name="SettingService">
+		<wsdl:operation name="GetSetting">
+			<wsdl:input message="tns:GetSettingRequest"/>
+			<wsdl:output message="tns:GetSettingResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetProductPricing">
+			<wsdl:input message="tns:GetProductPricingRequest"/>
+			<wsdl:output message="tns:GetProductPricingResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetExternalCompanyNames">
+			<wsdl:input message="tns:GetExternalCompanyNamesRequestMsg"/>
+			<wsdl:output message="tns:GetExternalCompanyNamesResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetExportServiceSettings">
+			<wsdl:input message="tns:GetExportServiceSettingsRequestMsg"/>
+			<wsdl:output message="tns:GetExportServiceSettingsResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetExternalContacts">
+			<wsdl:input message="tns:GetExternalContactsRequestMsg"/>
+			<wsdl:output message="tns:GetExternalContactsResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetExternalContactsByUserId">
+			<wsdl:input message="tns:GetExternalContactsByUserIdRequestMsg"/>
+			<wsdl:output message="tns:GetExternalContactsByUserIdResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetExternalOrganization">
+			<wsdl:input message="tns:GetExternalOrganizationRequestMsg"/>
+			<wsdl:output message="tns:GetExternalOrganizationResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteExternalContact">
+			<wsdl:input message="tns:DeleteExternalContactRequestMsg"/>
+			<wsdl:output message="tns:DeleteExternalContactResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateExternalContact">
+			<wsdl:input message="tns:CreateExternalContactRequestMsg"/>
+			<wsdl:output message="tns:CreateExternalContactResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateExternalContact">
+			<wsdl:input message="tns:UpdateExternalContactRequestMsg"/>
+			<wsdl:output message="tns:UpdateExternalContactResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="ResetUserPassword">
+			<wsdl:input message="tns:ResetUserPasswordRequestMsg"/>
+			<wsdl:output message="tns:ResetUserPasswordResponseMsg"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="SettingServiceSOAP" type="tns:SettingService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="GetSetting">
+			<soap:operation soapAction="http://www.elliemae.com/services/SettingSvc/GetSetting"/>
+			<wsdl:input>
+				<soap:header message="tns:SecurityContextHeader" part="header" use="literal"/>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetProductPricing">
+			<soap:operation soapAction="http://www.elliemae.com/services/SettingSvc/GetProductPricing"/>
+			<wsdl:input>
+				<soap:header message="tns:SecurityContextHeader" part="header" use="literal"/>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetExternalOrganization">
+			<soap:operation soapAction="http://www.elliemae.com/services/SettingSvc/GetExternalOrganization"/>
+			<wsdl:input>
+				<soap:header message="tns:SecurityContextHeader" part="header" use="literal"/>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetExternalCompanyNames">
+			<soap:operation soapAction="http://www.elliemae.com/services/metadata/GetExternalCompanyNames"/>
+			<wsdl:input>
+				<soap:header message="tns:SecurityContextHeader" part="header" use="literal"/>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetExportServiceSettings">
+			<soap:operation soapAction="http://www.elliemae.com/services/metadata/GetExportServiceSettings"/>
+			<wsdl:input>
+				<soap:header message="tns:SecurityContextHeader" part="header" use="literal"/>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetExternalContacts">
+			<soap:operation soapAction="http://www.elliemae.com/services/SettingSvc/GetExternalContacts"/>
+			<wsdl:input>
+				<soap:header message="tns:SecurityContextHeader" part="header" use="literal"/>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetExternalContactsByUserId">
+			<soap:operation soapAction="http://www.elliemae.com/services/SettingSvc/GetExternalContactsByUserId"/>
+			<wsdl:input>
+				<soap:header message="tns:SecurityContextHeader" part="header" use="literal"/>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteExternalContact">
+			<soap:operation soapAction="http://www.elliemae.com/services/SettingSvc/DeleteExternalContact"/>
+			<wsdl:input>
+				<soap:header message="tns:SecurityContextHeader" part="header" use="literal"/>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CreateExternalContact">
+			<soap:operation soapAction="http://www.elliemae.com/services/SettingSvc/CreateExternalContact"/>
+			<wsdl:input>
+				<soap:header message="tns:SecurityContextHeader" part="header" use="literal"/>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateExternalContact">
+			<soap:operation soapAction="http://www.elliemae.com/services/SettingSvc/UpdateExternalContact"/>
+			<wsdl:input>
+				<soap:header message="tns:SecurityContextHeader" part="header" use="literal"/>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ResetUserPassword">
+			<soap:operation style="document" soapAction="http://www.elliemae.com/services/SettingSvc/ResetUserPassword"/>
+			<wsdl:input>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" parts="body"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="SettingService">
+		<wsdl:port binding="tns:SettingServiceSOAP" name="SettingServiceSOAP">
+			<soap:address location="http://encompass-ib.dev.dco.elmae:11001/encompass_v1/users"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

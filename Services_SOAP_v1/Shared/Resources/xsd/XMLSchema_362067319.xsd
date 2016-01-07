@@ -1,0 +1,1116 @@
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.elliemae.com/encompass/platform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elliemae.com/encompass/platform">
+	<xs:import schemaLocation="XMLSchema_295060566.xsd" namespace="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+	<xs:import schemaLocation="XMLSchema_228053813.xsd" namespace="http://schemas.datacontract.org/2004/07/EllieMae.EMLite.Common"/>
+	<xs:complexType name="TPOContactsGetRequest.TPOContactsGetRequestBody">
+		<xs:sequence>
+			<xs:element name="OrganizationId" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TPOContactsGetRequest.TPOContactsGetRequestBody" nillable="true" type="tns:TPOContactsGetRequest.TPOContactsGetRequestBody"/>
+	<xs:element name="TPOContactsGetRequest" nillable="true" type="tns:TPOContactsGetRequest.TPOContactsGetRequestBody"/>
+	<xs:complexType name="SecurityContext">
+		<xs:sequence>
+			<xs:element name="Created" nillable="true" type="xs:dateTime"/>
+			<xs:element name="Realm" nillable="true" type="xs:string"/>
+			<xs:element name="SessionId" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TokenData" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="TokenType" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UserName" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SecurityContext" nillable="true" type="tns:SecurityContext"/>
+	<xs:complexType name="TPOContactsGetResponse.TPOContactsGetResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="TPOContacts" nillable="true" type="tns:EmListOfTPOContactsZju2146s"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TPOContactsGetResponse.TPOContactsGetResponseBody" nillable="true" type="tns:TPOContactsGetResponse.TPOContactsGetResponseBody"/>
+	<xs:complexType name="EmListOfTPOContactsZju2146s">
+		<xs:annotation>
+			<xs:appinfo>
+				<GenericType Name="EmListOf{0}{#}" Namespace="http://www.elliemae.com/encompass/platform" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+					<GenericParameter Name="TPOContacts" Namespace="http://www.elliemae.com/encompass/platform"/>
+				</GenericType>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:TPOContacts"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="EmListOfTPOContactsZju2146s" nillable="true" type="tns:EmListOfTPOContactsZju2146s"/>
+	<xs:complexType name="TPOContacts">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="AddToWatchlist" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="Address" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ApprovalCurrentStatus" type="xs:int"/>
+			<xs:element minOccurs="0" name="ApprovalDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CellPhone" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="City" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ContactID" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="DisabledLogin" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="Email" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="EmailForLockInfo" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="EmailForLogin" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="EmailForRateSheet" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ExternalOrgID" type="xs:int">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ExternalUserID" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FaxForLockInfo" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FaxForRateSheet" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="LastLogin" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Licenses" nillable="true" type="tns:EmListOfStateLicenseExtTypeZju2146s">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="NMLSCurrent" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="NmlsID" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PasswordChangedDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="RequirePasswordChange" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="RoleTypes" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Roles" type="xs:int"/>
+			<xs:element minOccurs="0" name="SSN" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="SalesRepID" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="State" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Title" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="UpdatedByExternal" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="UpdatedByExternalAdmin" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="UpdatedDateTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="UseCompanyAddress" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="UseParentInfoForRateLock" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="WelcomeEmailDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="WelcomeEmailUserName" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Zipcode" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TPOContacts" nillable="true" type="tns:TPOContacts"/>
+	<xs:complexType name="EmListOfStateLicenseExtTypeZju2146s">
+		<xs:annotation>
+			<xs:appinfo>
+				<GenericType Name="EmListOf{0}{#}" Namespace="http://www.elliemae.com/encompass/platform" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+					<GenericParameter Name="StateLicenseExtType" Namespace="http://www.elliemae.com/encompass/platform"/>
+				</GenericType>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StateLicenseExtType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="EmListOfStateLicenseExtTypeZju2146s" nillable="true" type="tns:EmListOfStateLicenseExtTypeZju2146s"/>
+	<xs:complexType name="StateLicenseExtType">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:StateLicenseType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Approved" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="EndDate" type="xs:dateTime">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="IssueDate" type="xs:dateTime">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="LastChecked" type="xs:dateTime">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="LicenseNo" nillable="true" type="xs:string">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="LicenseStatus" nillable="true" type="xs:string">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="SortIndex" type="xs:int"/>
+					<xs:element minOccurs="0" name="StartDate" type="xs:dateTime">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="StatusDate" type="xs:dateTime">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="StateLicenseExtType" nillable="true" type="tns:StateLicenseExtType"/>
+	<xs:complexType name="StateLicenseType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Exempt" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="LicenseType" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="StateAbbrevation" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="StateLicenseType" nillable="true" type="tns:StateLicenseType"/>
+	<xs:element name="TPOContactsGetResponse" nillable="true" type="tns:TPOContactsGetResponse.TPOContactsGetResponseBody"/>
+	<xs:complexType name="TPOContactGetByUserIdRequest.TPOContactGetByUserIdRequestBody">
+		<xs:sequence>
+			<xs:element name="ExternalUserID" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TPOContactGetByUserIdRequest.TPOContactGetByUserIdRequestBody" nillable="true" type="tns:TPOContactGetByUserIdRequest.TPOContactGetByUserIdRequestBody"/>
+	<xs:element name="TPOContactGetByUserIdRequest" nillable="true" type="tns:TPOContactGetByUserIdRequest.TPOContactGetByUserIdRequestBody"/>
+	<xs:complexType name="TPOContactGetByUserIdResponse.TPOContactGetByUserIdResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="TPOContact" nillable="true" type="tns:TPOContacts"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TPOContactGetByUserIdResponse.TPOContactGetByUserIdResponseBody" nillable="true" type="tns:TPOContactGetByUserIdResponse.TPOContactGetByUserIdResponseBody"/>
+	<xs:element name="TPOContactGetResponse" nillable="true" type="tns:TPOContactGetByUserIdResponse.TPOContactGetByUserIdResponseBody"/>
+	<xs:complexType name="TPOLoginRequest.TPOLoginRequestBody">
+		<xs:sequence>
+			<xs:element name="ApplicationName" nillable="true" type="xs:string"/>
+			<xs:element name="Email" nillable="true" type="xs:string"/>
+			<xs:element name="Password" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Realm" nillable="true" type="xs:string"/>
+			<xs:element name="SiteURL" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TPOLoginRequest.TPOLoginRequestBody" nillable="true" type="tns:TPOLoginRequest.TPOLoginRequestBody"/>
+	<xs:element name="TPOLoginRequest" nillable="true" type="tns:TPOLoginRequest.TPOLoginRequestBody"/>
+	<xs:complexType name="TPOLoginResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="SecurityContext" nillable="true" type="tns:SecurityContext"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TPOLoginResponseBody" nillable="true" type="tns:TPOLoginResponseBody"/>
+	<xs:element name="TPOLoginResponse" nillable="true" type="tns:TPOLoginResponseBody"/>
+	<xs:complexType name="ExternalOrganizationGetRequestBody">
+		<xs:sequence>
+			<xs:element name="ExternalOrganizationSetting" nillable="true" type="tns:EmListOfExternalOriginatorOrgSettingLsgO_SO18"/>
+			<xs:element name="OrganizationId" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExternalOrganizationGetRequestBody" nillable="true" type="tns:ExternalOrganizationGetRequestBody"/>
+	<xs:complexType name="EmListOfExternalOriginatorOrgSettingLsgO_SO18">
+		<xs:annotation>
+			<xs:appinfo>
+				<GenericType Name="EmListOf{0}{#}" Namespace="http://www.elliemae.com/encompass/platform" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+					<GenericParameter Name="ExternalOriginatorOrgSetting" Namespace="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+				</GenericType>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Item" type="q1:ExternalOriginatorOrgSetting" xmlns:q1="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="EmListOfExternalOriginatorOrgSettingLsgO_SO18" nillable="true" type="tns:EmListOfExternalOriginatorOrgSettingLsgO_SO18"/>
+	<xs:element name="ExternalOrganizationGetRequest" nillable="true" type="tns:ExternalOrganizationGetRequestBody"/>
+	<xs:complexType name="ExternalOrganizationGetResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ExternalOrganization" nillable="true" type="tns:EmDictionaryOfExternalOriginatorOrgSettingExternalOrganizationContractu81dhnoQ"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExternalOrganizationGetResponseBody" nillable="true" type="tns:ExternalOrganizationGetResponseBody"/>
+	<xs:complexType name="EmDictionaryOfExternalOriginatorOrgSettingExternalOrganizationContractu81dhnoQ">
+		<xs:annotation>
+			<xs:appinfo>
+				<IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+				<GenericType Name="EmDictionaryOf{0}{1}{#}" Namespace="http://www.elliemae.com/encompass/platform" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+					<GenericParameter Name="ExternalOriginatorOrgSetting" Namespace="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+					<GenericParameter Name="ExternalOrganizationContract" Namespace="http://www.elliemae.com/encompass/platform"/>
+				</GenericType>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Item">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Key" type="q2:ExternalOriginatorOrgSetting" xmlns:q2="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+						<xs:element name="Value" nillable="true" type="tns:ExternalOrganizationContract"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="EmDictionaryOfExternalOriginatorOrgSettingExternalOrganizationContractu81dhnoQ" nillable="true" type="tns:EmDictionaryOfExternalOriginatorOrgSettingExternalOrganizationContractu81dhnoQ"/>
+	<xs:complexType name="ExternalOrganizationContract">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ApprovalStatus" nillable="true" type="tns:ApprovalStatus">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="AssignableSalesReps" nillable="true" type="tns:AssignableSalesReps">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="BasicInfo" nillable="true" type="tns:BasicInfo">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="LoanCriteria" nillable="true" type="tns:ExternalOrgLoanTypes">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ProductAndPricing" nillable="true" type="tns:PriceGroupGetContract">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExternalOrganizationContract" nillable="true" type="tns:ExternalOrganizationContract"/>
+	<xs:complexType name="ApprovalStatus">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="AddToWatchlist" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ApplicationDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ApprovedDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CompanyRating" type="xs:int"/>
+			<xs:element minOccurs="0" name="CurrentStatus" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CurrentStatusDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ApprovalStatus" nillable="true" type="tns:ApprovalStatus"/>
+	<xs:complexType name="AssignableSalesReps">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Email" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Name" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Persona" nillable="true" type="q3:ArrayOfPersona" xmlns:q3="http://schemas.datacontract.org/2004/07/EllieMae.EMLite.Common">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AssignableSalesReps" nillable="true" type="tns:AssignableSalesReps"/>
+	<xs:complexType name="BasicInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Address" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CanCloseInOwnName" type="xs:int"/>
+			<xs:element minOccurs="0" name="CanFundInOwnName" type="xs:int"/>
+			<xs:element minOccurs="0" name="ChannelType" type="q4:ExternalOriginatorEntityType" xmlns:q4="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="City" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CompanyLegalName" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CompanyNetWorth" type="xs:decimal">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CompanyOwnerName" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="DUSponsored" type="xs:int"/>
+			<xs:element minOccurs="0" name="DateOfIncorporation" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="DisabledLogin" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="EOCompany" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="EOExpirationDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="EOPolicyNumber" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Email" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="EmailForLockInfo" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="EmailForRateSheet" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FaxForLockInfo" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FaxForRateSheet" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FinancialsLastUpdate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FinancialsPeriod" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Incorporated" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="LastLoanSubmitted" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="MERSOriginatingORGID" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Manager" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="NmlsId" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="OrgID" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="OrganizationName" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="OrganizationType" type="q5:ExternalOriginatorOrgType" xmlns:q5="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="OtherEntityDescription" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="State" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="StateIncorp" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="TPOID" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="TaxID" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="TypeOfEntity" type="xs:int"/>
+			<xs:element minOccurs="0" name="UseParentInfoForBusinessInfo" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="UseParentInfoForCompanyDetails" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="UseParentInfoForRateLock" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="UseSSNFormat" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="Website" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="BasicInfo" nillable="true" type="tns:BasicInfo"/>
+	<xs:complexType name="ExternalOrgLoanTypes">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Broker" nillable="true" type="tns:ExternalOrgChannelLoanType">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Correspondent" nillable="true" type="tns:CorrespondentGetContract">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FHAApprovedDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FHACompareRatio" type="xs:decimal">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FHAExpirationDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FHAId" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FHASonsorId" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FHAStatus" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="UseParentInfoFhaVa" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="VAApprovedDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="VAExpirationDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="VAId" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="VAStatus" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExternalOrgLoanTypes" nillable="true" type="tns:ExternalOrgLoanTypes"/>
+	<xs:complexType name="ExternalOrgChannelLoanType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="AllowLoansWithIssues" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="LoanPurposes" nillable="true" type="tns:EmListOfLoanPurposesLsgO_SO18">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="LoanTypes" nillable="true" type="tns:EmListOfLoanTypesLsgO_SO18">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="MsgUploadNonApprovedLoans" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExternalOrgChannelLoanType" nillable="true" type="tns:ExternalOrgChannelLoanType"/>
+	<xs:complexType name="EmListOfLoanPurposesLsgO_SO18">
+		<xs:annotation>
+			<xs:appinfo>
+				<GenericType Name="EmListOf{0}{#}" Namespace="http://www.elliemae.com/encompass/platform" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+					<GenericParameter Name="LoanPurposes" Namespace="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+				</GenericType>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Item" type="q6:LoanPurposes" xmlns:q6="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="EmListOfLoanPurposesLsgO_SO18" nillable="true" type="tns:EmListOfLoanPurposesLsgO_SO18"/>
+	<xs:complexType name="EmListOfLoanTypesLsgO_SO18">
+		<xs:annotation>
+			<xs:appinfo>
+				<GenericType Name="EmListOf{0}{#}" Namespace="http://www.elliemae.com/encompass/platform" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+					<GenericParameter Name="LoanTypes" Namespace="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+				</GenericType>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Item" type="q7:LoanTypes" xmlns:q7="http://schemas.datacontract.org/2004/07/Elli.EncompassPlatform.Common.DataContracts"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="EmListOfLoanTypesLsgO_SO18" nillable="true" type="tns:EmListOfLoanTypesLsgO_SO18"/>
+	<xs:complexType name="CorrespondentGetContract">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="AdvancedCode" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="AdvancedCodeXml" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CorrespondentDelegated" nillable="true" type="tns:ExternalOrgChannelLoanType">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CorrespondentNonDelegated" nillable="true" type="tns:ExternalOrgChannelLoanType">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Underwriting" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CorrespondentGetContract" nillable="true" type="tns:CorrespondentGetContract"/>
+	<xs:complexType name="PriceGroupGetContract">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="EPPSCompModel" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="EPPSUserName" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PriceGroup" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PriceGroupGetContract" nillable="true" type="tns:PriceGroupGetContract"/>
+	<xs:element name="ExternalOrganizationGetResponse" nillable="true" type="tns:ExternalOrganizationGetResponseBody"/>
+	<xs:complexType name="TPOContactDeleteRequest.TPOContactDeleteRequestBody">
+		<xs:sequence>
+			<xs:element name="ExternalUserID" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TPOContactDeleteRequest.TPOContactDeleteRequestBody" nillable="true" type="tns:TPOContactDeleteRequest.TPOContactDeleteRequestBody"/>
+	<xs:element name="TPOContactDeleteRequest" nillable="true" type="tns:TPOContactDeleteRequest.TPOContactDeleteRequestBody"/>
+	<xs:complexType name="TPOContactDeleteResponse.TPOContactDeleteResponseBody">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="TPOContactDeleteResponse.TPOContactDeleteResponseBody" nillable="true" type="tns:TPOContactDeleteResponse.TPOContactDeleteResponseBody"/>
+	<xs:element name="TPOContactDeleteResponse" nillable="true" type="tns:TPOContactDeleteResponse.TPOContactDeleteResponseBody"/>
+	<xs:complexType name="TPOContactCreateRequest.TPOContactCreateRequestBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="SendWelcomeEmail" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="SetDefaultURL" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="TPOContactsCreateContract" nillable="true" type="tns:TPOContacts"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TPOContactCreateRequest.TPOContactCreateRequestBody" nillable="true" type="tns:TPOContactCreateRequest.TPOContactCreateRequestBody"/>
+	<xs:element name="TPOContactCreateRequest" nillable="true" type="tns:TPOContactCreateRequest.TPOContactCreateRequestBody"/>
+	<xs:complexType name="TPOContactCreateResponse.TPOContactCreateResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ContactID" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ExternalUserID" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Password" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TPOContactCreateResponse.TPOContactCreateResponseBody" nillable="true" type="tns:TPOContactCreateResponse.TPOContactCreateResponseBody"/>
+	<xs:element name="TPOContactCreateResponse" nillable="true" type="tns:TPOContactCreateResponse.TPOContactCreateResponseBody"/>
+	<xs:complexType name="TPOContactUpdateRequest.TPOContactUpdateRequestBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="TPOContactUpdateContract" nillable="true" type="tns:TPOContacts"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TPOContactUpdateRequest.TPOContactUpdateRequestBody" nillable="true" type="tns:TPOContactUpdateRequest.TPOContactUpdateRequestBody"/>
+	<xs:element name="TPOContactUpdateRequest" nillable="true" type="tns:TPOContactUpdateRequest.TPOContactUpdateRequestBody"/>
+	<xs:complexType name="TPOContactUpdateResponse.TPOContactUpdateResponseBody">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="TPOContactUpdateResponse.TPOContactUpdateResponseBody" nillable="true" type="tns:TPOContactUpdateResponse.TPOContactUpdateResponseBody"/>
+	<xs:element name="TPOContactUpdateResponse" nillable="true" type="tns:TPOContactUpdateResponse.TPOContactUpdateResponseBody"/>
+	<xs:complexType name="ResetUserPasswordRequest.ResetUserPasswordRequestBody">
+		<xs:sequence>
+			<xs:element name="ExternalUserID" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Password" nillable="true" type="xs:string"/>
+			<xs:element name="RequirePasswordChange" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="SendResetPasswordEmail" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ResetUserPasswordRequest.ResetUserPasswordRequestBody" nillable="true" type="tns:ResetUserPasswordRequest.ResetUserPasswordRequestBody"/>
+	<xs:element name="TPOResetUserPassword" nillable="true" type="tns:ResetUserPasswordRequest.ResetUserPasswordRequestBody"/>
+	<xs:complexType name="ResetUserPasswordResponse.ResetUserPasswordResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Password" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ResetUserPasswordResponse.ResetUserPasswordResponseBody" nillable="true" type="tns:ResetUserPasswordResponse.ResetUserPasswordResponseBody"/>
+	<xs:element name="ResetUserPasswordResponse" nillable="true" type="tns:ResetUserPasswordResponse.ResetUserPasswordResponseBody"/>
+</xs:schema>

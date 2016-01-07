@@ -1,0 +1,31 @@
+<definitions targetNamespace="http://www.elliemae.com/encompass/directory" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.elliemae.com/encompass/directory" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <types>
+    <xsd:schema targetNamespace="http://www.elliemae.com/encompass/directory" elementFormDefault="qualified">
+      <xsd:include schemaLocation="../xsd/DirectorySvcs.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="GetSettingsRequestMsg">
+    <part name="body" element="tns:GetSettingsRequest"/>
+  </message>
+  <message name="GetSettingsResponseMsg">
+    <part name="body" element="tns:GetSettingsResponse"/>
+  </message>
+  <portType name="GetSettingsPort">
+    <operation name="GetSettings">
+        <input message="tns:GetSettingsRequestMsg"/>
+        <output message="tns:GetSettingsResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="GetSettingsPortSOAP11Binding" type="tns:GetSettingsPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GetSettings">
+      <soap:operation style="document" soapAction="http://www.elliemae.com/encompass/directory/GetSettings"/>
+      <input>
+        <soap:body use="literal" parts="body"/>
+      </input>
+      <output>
+        <soap:body use="literal" parts="body"/>
+      </output>
+    </operation>
+  </binding>
+</definitions>

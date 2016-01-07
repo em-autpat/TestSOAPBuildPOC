@@ -1,0 +1,305 @@
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.elliemae.com/edm/platform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elliemae.com/edm/platform" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+	<xs:import schemaLocation="XMLSchema_-1999779437.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+	<xs:complexType name="GetMediaClientsRequest.GetMediaClientsRequestBody">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="GetMediaClientsRequest.GetMediaClientsRequestBody" nillable="true" type="tns:GetMediaClientsRequest.GetMediaClientsRequestBody"/>
+	<xs:element name="GetMediaClientsRequest" nillable="true" type="tns:GetMediaClientsRequest.GetMediaClientsRequestBody"/>
+	<xs:complexType name="GetMediaClientsResponse.GetMediaClientsResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Clients" nillable="true" type="tns:ArrayOfMediaClient"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="GetMediaClientsResponse.GetMediaClientsResponseBody" nillable="true" type="tns:GetMediaClientsResponse.GetMediaClientsResponseBody"/>
+	<xs:complexType name="ArrayOfMediaClient">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="MediaClient" nillable="true" type="tns:MediaClient"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfMediaClient" nillable="true" type="tns:ArrayOfMediaClient"/>
+	<xs:complexType name="MediaClient">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PublicKey" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MediaClient" nillable="true" type="tns:MediaClient"/>
+	<xs:element name="GetMediaClientsResponse" nillable="true" type="tns:GetMediaClientsResponse.GetMediaClientsResponseBody"/>
+	<xs:complexType name="GetFileRequest.GetFileRequestBody">
+		<xs:sequence>
+			<xs:element name="FileGuid" type="ser:guid">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MediaClient" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="GetFileRequest.GetFileRequestBody" nillable="true" type="tns:GetFileRequest.GetFileRequestBody"/>
+	<xs:element name="GetFileRequest" nillable="true" type="tns:GetFileRequest.GetFileRequestBody"/>
+	<xs:complexType name="GetFileResponse.GetFileResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FileHash" nillable="true" type="xs:base64Binary">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FileSize" type="xs:long">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="MediaStore" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="RelativePath" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="RootPath" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="GetFileResponse.GetFileResponseBody" nillable="true" type="tns:GetFileResponse.GetFileResponseBody"/>
+	<xs:element name="GetFileResponse" nillable="true" type="tns:GetFileResponse.GetFileResponseBody"/>
+	<xs:complexType name="GetFileStreamInfoRequest.GetFileStreamInfoRequestBody">
+		<xs:sequence>
+			<xs:element name="FileName" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MediaClient" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ParentFolder" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="GetFileStreamInfoRequest.GetFileStreamInfoRequestBody" nillable="true" type="tns:GetFileStreamInfoRequest.GetFileStreamInfoRequestBody"/>
+	<xs:element name="GetFileStreamInfoRequest" nillable="true" type="tns:GetFileStreamInfoRequest.GetFileStreamInfoRequestBody"/>
+	<xs:complexType name="GetFileStreamInfoResponse.GetFileStreamInfoResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="FileGuid" type="ser:guid">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="MediaStore" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="RelativePath" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="RootPath" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="GetFileStreamInfoResponse.GetFileStreamInfoResponseBody" nillable="true" type="tns:GetFileStreamInfoResponse.GetFileStreamInfoResponseBody"/>
+	<xs:element name="GetFileStreamInfoResponse" nillable="true" type="tns:GetFileStreamInfoResponse.GetFileStreamInfoResponseBody"/>
+	<xs:complexType name="SaveFileRequest.SaveFileRequestBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FileGuid" type="ser:guid">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FileHash" nillable="true" type="xs:base64Binary">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FileSize" type="xs:long">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MediaClient" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MediaStore" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RelativePath" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SaveFileRequest.SaveFileRequestBody" nillable="true" type="tns:SaveFileRequest.SaveFileRequestBody"/>
+	<xs:element name="SaveFileRequest" nillable="true" type="tns:SaveFileRequest.SaveFileRequestBody"/>
+	<xs:complexType name="SaveFileResponse.SaveFileResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Success" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SaveFileResponse.SaveFileResponseBody" nillable="true" type="tns:SaveFileResponse.SaveFileResponseBody"/>
+	<xs:element name="SaveFileResponse" nillable="true" type="tns:SaveFileResponse.SaveFileResponseBody"/>
+	<xs:complexType name="SetFileExpirationRequest.SetFileExpirationRequestBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FileGuid" type="ser:guid">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MediaClient" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SetFileExpirationRequest.SetFileExpirationRequestBody" nillable="true" type="tns:SetFileExpirationRequest.SetFileExpirationRequestBody"/>
+	<xs:element name="SetFileExpirationRequest" nillable="true" type="tns:SetFileExpirationRequest.SetFileExpirationRequestBody"/>
+	<xs:complexType name="SetFileExpirationResponse.SetFileExpirationResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Success" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SetFileExpirationResponse.SetFileExpirationResponseBody" nillable="true" type="tns:SetFileExpirationResponse.SetFileExpirationResponseBody"/>
+	<xs:element name="SetFileExpirationResponse" nillable="true" type="tns:SetFileExpirationResponse.SetFileExpirationResponseBody"/>
+	<xs:complexType name="DuplicateFileRequest.DuplicateFileRequestBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FileGuid" type="ser:guid">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MediaClient" nillable="true" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DuplicateFileRequest.DuplicateFileRequestBody" nillable="true" type="tns:DuplicateFileRequest.DuplicateFileRequestBody"/>
+	<xs:element name="DuplicateFileRequest" nillable="true" type="tns:DuplicateFileRequest.DuplicateFileRequestBody"/>
+	<xs:complexType name="DuplicateFileResponse.DuplicateFileResponseBody">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="FileGuid" type="ser:guid">
+				<xs:annotation>
+					<xs:appinfo>
+						<DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DuplicateFileResponse.DuplicateFileResponseBody" nillable="true" type="tns:DuplicateFileResponse.DuplicateFileResponseBody"/>
+	<xs:element name="DuplicateFileResponse" nillable="true" type="tns:DuplicateFileResponse.DuplicateFileResponseBody"/>
+</xs:schema>

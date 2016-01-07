@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.elliemae.com/services/security"
+			xmlns:tns="http://www.elliemae.com/services/security"
+			elementFormDefault="qualified">
+
+	<xsd:element name="AuthenticateClientRequest" type="tns:AuthenticateClientRequestType" />
+	<xsd:element name="AuthenticateClientResponse" type="tns:AuthenticateClientResponseType" />
+	<xsd:element name="UserProfileGetRequest" type="tns:GetUserProfileRequestType" />
+	<xsd:element name="UserProfileGetResponse" type="tns:GetUserProfileResponseType" />
+	<xsd:element name="SecurityContext" type="tns:SecurityContextType" />
+	<!-- <xsd:element name="IssueAuthenticationTokenRequest" type="tns:IssueAuthenticationTokenRequestType" 
+		/> <xsd:element name="IssueAuthenticationTokenResponse" type="tns:IssueAuthenticationTokenResponseType" 
+		/> <xsd:element name="AuthenticateClientWithTokenRequest" type="tns:AuthenticateClientWithTokenRequestType" 
+		/> <xsd:element name="AuthenticateClientWithTokenResponse" type="tns:AuthenticateClientWithTokenResponseType" 
+		/> -->
+		
+	<!-- AuthenticateClient -->
+	<xsd:complexType name="AuthenticateClientRequestType">
+		<xsd:sequence>
+			<xsd:element name="ClientCredentials" type="tns:ClientCredentialsType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ClientCredentialsType">
+		<xsd:sequence>
+			<xsd:element name="Password" type="xsd:string" />
+			<xsd:element name="Realm" type="xsd:string" />
+			<xsd:element name="UserName" type="xsd:string" />			
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TPOClientCredentialsType">
+		<xsd:sequence>
+			<xsd:element name="Password" type="xsd:string" />
+			<xsd:element name="Realm" type="xsd:string" />
+			<xsd:element name="UserName" type="xsd:string" />
+			<xsd:element name="SiteURL" type="xsd:string" />				
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AuthenticateClientResponseType">
+		<xsd:sequence>
+			<xsd:element name="SecurityContext" type="tns:SecurityContextType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SecurityContextType">
+		<xsd:sequence>
+			<xsd:element name="Created" type="xsd:dateTime" />
+			<xsd:element name="Realm" type="xsd:string" />
+			<xsd:element name="SessionId" type="xsd:string" />
+			<xsd:element minOccurs="0" name="TokenData" type="xsd:string" />
+			<xsd:element minOccurs="0" name="TokenType" type="xsd:string" />
+			<xsd:element name="UserName" nillable="true" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TPOSecurityContextType">
+		<xsd:sequence>
+			<xsd:element name="Created" type="xsd:dateTime" />
+			<xsd:element name="Realm" type="xsd:string" />
+			<xsd:element name="SessionId" type="xsd:string" />			
+			<xsd:element name="UserName" nillable="true" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- GetUserProfile -->
+	<xsd:complexType name="GetUserProfileRequestType">
+		<xsd:sequence>
+			<xsd:element name="UserName" nillable="true" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="GetUserProfileResponseType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="UserProfile" type="tns:UserProfileType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UserProfileType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="AccessMode" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="CHUMId" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="CellPhone" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="Email" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="EmailSignature"
+				nillable="true" type="xsd:string" />
+			<xsd:element minOccurs="0" name="EmployeeID" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="EncompassVersion"
+				nillable="true" type="xsd:string" />
+			<xsd:element minOccurs="0" name="Fax" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="FirstName" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="FullName" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="InheritParentCompPlan"
+				type="xsd:boolean" />
+			<xsd:element minOccurs="0" name="IsTopLevelUser" type="xsd:boolean" />
+			<xsd:element minOccurs="0" name="LastLogin" type="xsd:dateTime" />
+			<xsd:element minOccurs="0" name="LastName" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="Locked" type="xsd:boolean" />
+			<xsd:element minOccurs="0" name="NMLSExpirationDate"
+				type="xsd:dateTime" />
+			<xsd:element minOccurs="0" name="NMLSOriginatorID"
+				nillable="true" type="xsd:string" />
+			<xsd:element minOccurs="0" name="OrgId" type="xsd:int" />
+			<xsd:element minOccurs="0" name="PeerView" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="PersonalStatusOnline"
+				type="xsd:boolean" />
+			<xsd:element minOccurs="0" name="Phone" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="Status" nillable="true"
+				type="xsd:string" />
+                        <xsd:element minOccurs="0" name="Title" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="UserID" nillable="true"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="WorkingFolder" nillable="true"
+				type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+	<!-- IssueAuthenticationToken -->
+	<!-- <xsd:complexType name="IssueAuthenticationTokenRequestType"> <xsd:sequence> 
+		<xsd:element minOccurs="0" name="TokenData" nillable="true" type="xsd:string" 
+		/> <xsd:element minOccurs="0" name="Type" type="q1:AuthenticationTokenType" 
+		xmlns:q1="http://schemas.datacontract.org/2004/07/Elli.Domain.Security" /> 
+		</xsd:sequence> </xsd:complexType> <xsd:simpleType name="IssueAuthenticationTokenType"> 
+		<xsd:restriction base="xsd:string"> <xsd:enumeration value="Jwt" /> <xsd:enumeration 
+		value="Swt" /> <xsd:enumeration value="Saml1" /> <xsd:enumeration value="Saml2" 
+		/> </xsd:restriction> </xsd:simpleType> -->
+	<!-- AuthenticateToken -->
+	<!-- <xsd:complexType name="AuthenticationTokenType"> <xsd:sequence> <xsd:element 
+		minOccurs="0" name="TokenData" nillable="true" type="xsd:string" /> <xsd:element 
+		minOccurs="0" name="Type" type="q1:AuthenticationTokenType" xmlns:q1="http://schemas.datacontract.org/2004/07/Elli.Domain.Security" 
+		/> </xsd:sequence> </xsd:complexType> <xsd:simpleType name="AuthenticationTokenType"> 
+		<xsd:restriction base="xsd:string"> <xsd:enumeration value="Jwt" /> <xsd:enumeration 
+		value="Swt" /> <xsd:enumeration value="Saml1" /> <xsd:enumeration value="Saml2" 
+		/> </xsd:restriction> </xsd:simpleType> -->
+
+</xsd:schema>

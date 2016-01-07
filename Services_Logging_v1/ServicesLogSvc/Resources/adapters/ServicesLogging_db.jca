@@ -1,0 +1,14 @@
+<adapter-config name="ServicesLogging" adapter="Database Adapter" wsdlLocation="../wsdl/ServicesLogging.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/srvlyr_logmsgs" UIConnectionName="ED1VDBENC3007.dco.elmae\SRVLYRDB" adapterRef=""/>
+  <endpoint-interaction portType="ServicesLogging_ptt" operation="insert">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="ServicesLogging.ServicesLog"/>
+      <property name="DmlType" value="insert"/>
+      <property name="MappingsMetaDataURL" value="ServicesLogging-or-mappings.xml"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

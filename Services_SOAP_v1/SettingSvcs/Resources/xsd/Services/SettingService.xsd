@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.elliemae.com/services/settingservice"
+	xmlns:tns="http://www.elliemae.com/services/settingservice" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<element name="GetSettingRequest" type="tns:GetSettingRequestType" />
+	<element name="GetSettingResponse" type="tns:GetSettingResponseType" />
+	<element name="GetProductPricingRequest" type="tns:GetProductPricingRequestType" />
+	<element name="GetProductPricingResponse" type="tns:GetProductPricingResponseType" />
+	<element name="GetExternalCompanyNamesRequest" type="tns:GetExternalCompanyNamesRequestType" />
+	<element name="GetExternalCompanyNamesResponse" type="tns:GetExternalCompanyNamesResponseType" />
+	<element name="GetExportServiceSettingsRequest" type="tns:GetExportServiceSettingsRequestType" />
+	<element name="GetExportServiceSettingsResponse" type="tns:GetExportServiceSettingsResponseType" />
+	<element name="GetExternalContactsRequest" type="tns:GetExternalContactsRequestType" />
+	<element name="GetExternalContactsResponse" type="tns:GetExternalContactsResponseType" />
+	<element name="GetExternalContactsByUserIdRequest" type="tns:GetExternalContactsByUserIdRequestType" />
+	<element name="GetExternalContactsByUserIdResponse" type="tns:GetExternalContactsByUserIdResponseType" />
+	<element name="GetExternalOrganizationRequest" type="tns:GetExternalOrganizationRequestType" />
+	<element name="GetExternalOrganizationResponse" type="tns:GetExternalOrganizationResponseType" />
+	<element name="DeleteExternalContactRequest" type="tns:DeleteExternalContactRequestType" />
+	<element name="DeleteExternalContactResponse" type="tns:DeleteExternalContactResponseType" />
+	<element name="CreateExternalContactRequest" type="tns:CreateExternalContactRequestType" />
+	<element name="CreateExternalContactResponse" type="tns:CreateExternalContactResponseType" />
+	<element name="UpdateExternalContactRequest" type="tns:UpdateExternalContactRequestType" />
+	<element name="UpdateExternalContactResponse" type="tns:UpdateExternalContactResponseType" />
+	<element name="ResetUserPasswordRequest" type="tns:ResetUserPasswordRequestType" />
+	<element name="ResetUserPasswordResponse" type="tns:ResetUserPasswordResponseType" />
+
+
+	<xs:complexType name="GetSettingRequestType">
+		<xs:sequence>
+			<xs:element name="Category" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="Setting" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GetSettingResponseType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Category" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Settings" nillable="true"
+				type="tns:ArrayOfSetting" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ArrayOfSetting">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Setting"
+				nillable="true" type="tns:Setting" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Setting">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:EntityContractBase">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Name" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="Value" nillable="true"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="EntityContractBase">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Id" type="tns:guid" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="guid">
+		<xs:restriction base="xs:string">
+			<xs:pattern
+				value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="GetProductPricingRequestType">
+		<xs:sequence>
+			<xs:element name="Active" type="xs:boolean" />
+			<xs:element minOccurs="0" name="PartnerID" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GetProductPricingResponseType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ProductPricingSettings"
+				nillable="true" type="tns:ProductPricingSettingType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ProductPricingSettingType">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:EntityContractBase">
+				<xs:sequence>
+					<xs:element minOccurs="0" nillable="true" name="Active"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="AdminURL" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="ImportToLoan" nillable="true"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="IsCustomizeInvestorName"
+						nillable="true" type="xs:boolean" />
+					<xs:element minOccurs="0" name="MoreInfoURL" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="PartnerID" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="PartnerLockConfirm"
+						nillable="true" type="xs:boolean" />
+					<xs:element minOccurs="0" name="PartnerName" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="PartnerRequestLock"
+						nillable="true" type="xs:boolean" />
+					<xs:element minOccurs="0" name="RequestLockOnlyWOCurrentLock"
+						nillable="true" type="xs:boolean" />
+					<xs:element minOccurs="0" name="SettingsSection"
+						nillable="true" type="xs:string" />
+					<xs:element minOccurs="0" name="ShowSellSide" nillable="true"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="SupportsImportToLoan"
+						nillable="true" type="xs:boolean" />
+					<xs:element minOccurs="0" name="SupportsPartnerLockConfirm"
+						nillable="true" type="xs:boolean" />
+					<xs:element minOccurs="0" name="SupportsPartnerRequestLock"
+						nillable="true" type="xs:boolean" />
+					<xs:element minOccurs="0" name="UseCustomizedInvestorName"
+						nillable="true" type="xs:boolean" />
+					<xs:element minOccurs="0" name="UseInvestorAndLenderName"
+						nillable="true" type="xs:boolean" />
+					<xs:element minOccurs="0" name="UseOnlyInvestorName"
+						nillable="true" type="xs:boolean" />
+					<xs:element minOccurs="0" name="UseOnlyLenderName"
+						nillable="true" type="xs:boolean" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="GetExternalCompanyNamesRequestType">
+		<xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GetExternalCompanyNamesResponseType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ExternalCompanyNames"
+				nillable="true" type="tns:ArrayOfExternalCompanyName" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ArrayOfExternalCompanyName">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="ExternalCompanyName"
+				nillable="true" type="tns:ExternalCompanyName" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ExternalCompanyName">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:EntityContractBase">
+				<xs:sequence>
+					<xs:element name="ExternalId" nillable="true" type="xs:string" />
+					<xs:element name="Name" nillable="true" type="xs:string" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="GetExportServiceSettingsRequestType">
+		<xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GetExportServiceSettingsResponseType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Settings" nillable="true"
+				type="tns:EmListOfExportServiceSetting" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="EmListOfExportServiceSetting">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Item">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Key" nillable="true" type="xs:string" />
+						<xs:element name="Value" nillable="true"
+							type="tns:EmListOfExportServiceSettingGet" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="EmListOfExportServiceSetting" nillable="true"
+		type="tns:EmListOfExportServiceSetting" />
+	<xs:complexType name="EmListOfExportServiceSettingGet">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Item"
+				nillable="true" type="tns:ExportServiceSetting" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="EmListOfExportServiceSettingGet" nillable="true"
+		type="tns:EmListOfExportServiceSettingGet" />
+	<xs:complexType name="ExportServiceSetting">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CategoryName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="DataServiceId" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="DisplayName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="FilePath" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="LoanFileSpecific" type="xs:boolean" />
+			<xs:element minOccurs="0" name="UseLoanTab" type="xs:boolean" />
+			<xs:element minOccurs="0" name="UseStandardValidationGrid"
+				type="xs:boolean" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExportServiceSetting" nillable="true"
+		type="tns:ExportServiceSetting" />
+	<xs:complexType name="GetExternalContactsRequestType">
+		<xs:sequence>
+			<xs:element name="OrganizationId" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetExternalContactsResponseType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="TPOContacts" nillable="true"
+				type="tns:ListOfTPOContacts" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ListOfTPOContacts">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Item"
+				nillable="true" type="tns:TPOContacts" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TPOContacts">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="AddToWatchlist" type="xs:boolean" />
+			<xs:element minOccurs="0" name="Address" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="ApprovalCurrentStatus"
+				type="xs:int" />
+			<xs:element minOccurs="0" name="ApprovalDate" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="CellPhone" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="City" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="ContactID" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="DisabledLogin" type="xs:boolean" />
+			<xs:element minOccurs="0" name="Email" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="EmailForLockInfo"
+				nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="EmailForLogin" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="EmailForRateSheet"
+				nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="ExternalOrgID" type="xs:int" />
+			<xs:element minOccurs="0" name="ExternalUserID" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="FaxForLockInfo" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="FaxForRateSheet" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="FirstName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="LastLogin" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="LastName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Licenses" nillable="true"
+				type="tns:ArrayOfStateLicenseExtType" />
+			<xs:element minOccurs="0" name="MiddleName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="NMLSCurrent" type="xs:boolean" />
+			<xs:element minOccurs="0" name="NmlsID" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Notes" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="PasswordChangedDate" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="Phone" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="RequirePasswordChange"
+				type="xs:boolean" />
+			<xs:element minOccurs="0" name="Roles" type="xs:int" />
+			<xs:element minOccurs="0" name="SSN" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="SalesRepID" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="State" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Suffix" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Title" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="UpdatedBy" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="UpdatedByExternal" type="xs:boolean" />
+			<xs:element minOccurs="0" name="UpdatedByExternalAdmin"
+				nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="UpdatedDateTime" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="UseCompanyAddress" type="xs:boolean" />
+			<xs:element minOccurs="0" name="UseParentInfoForRateLock"
+				type="xs:boolean" />
+			<xs:element minOccurs="0" name="WelcomeEmailDate" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="WelcomeEmailUserName"
+				nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="Zipcode" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ArrayOfStateLicenseExtType">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="StateLicenseExtType"
+				nillable="true" type="tns:StateLicenseExtType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="StateLicenseExtType">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:StateLicenseType">
+				<xs:sequence>
+					<xs:element name="endDate" type="xs:dateTime" />
+					<xs:element name="issueDate" type="xs:dateTime" />
+					<xs:element name="lastChecked" type="xs:dateTime" />
+					<xs:element name="licenseNo" nillable="true" type="xs:string" />
+					<xs:element name="licenseStatus" nillable="true" type="xs:string" />
+					<xs:element name="sortIndex" type="xs:int" />
+					<xs:element name="startDate" type="xs:dateTime" />
+					<xs:element name="statusDate" type="xs:dateTime" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="StateLicenseType">
+		<xs:sequence>
+			<xs:element name="exempt" type="xs:boolean" />
+			<xs:element name="licenseType" nillable="true" type="xs:string" />
+			<xs:element name="selected" type="xs:boolean" />
+			<xs:element name="stateAbbrevation" nillable="true" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GetExternalContactsByUserIdRequestType">
+		<xs:sequence>
+			<xs:element name="ExternalUserID" nillable="true" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GetExternalContactsByUserIdResponseType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="TPOContact" nillable="true"
+				type="tns:TPOContacts" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeleteExternalContactRequestType">
+		<xs:sequence>
+			<xs:element name="ExternalUserID" nillable="true" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DeleteExternalContactResponseType">
+		<xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CreateExternalContactRequestType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="SendWelcomeEmail" type="xs:boolean" />
+			<xs:element minOccurs="0" name="SetDefaultURL" type="xs:boolean" />
+			<xs:element minOccurs="0" name="TPOContact" nillable="true"
+				type="tns:TPOContacts" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetExternalOrganizationRequestType">
+		<xs:sequence>
+			<xs:element name="ExternalOrganizationSetting" nillable="true"
+				type="tns:EmListOfExternalOriginatorOrgSetting" />
+			<xs:element name="OrganizationId" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EmListOfExternalOriginatorOrgSetting">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Item"
+				type="tns:ExternalOriginatorOrgSetting" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ExternalOriginatorOrgSetting">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="License" />
+			<xs:enumeration value="LoanTypes" />
+			<xs:enumeration value="AssignableSalesReps" />
+			<xs:enumeration value="CompanyStatus" />
+			<xs:enumeration value="ContactStatus" />
+			<xs:enumeration value="CompanyRating" />
+			<xs:enumeration value="AttachmentCategory" />
+			<xs:enumeration value="PriceGroup" />
+			<xs:enumeration value="UrlList" />
+			<xs:enumeration value="PrimaryManager" />
+			<xs:enumeration value="Note" />
+			<xs:enumeration value="Attachment" />
+			<xs:enumeration value="LOComp" />
+			<xs:enumeration value="LoCompHistory" />
+			<xs:enumeration value="ExternalSalesRepListForOrg" />
+			<xs:enumeration value="BasicInfo" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="GetExternalOrganizationResponseType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ExternalOrganization"
+				nillable="true"
+				type="tns:EmDictionaryOfExternalOriginatorOrgSettingExternalOrganizationContract" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="GetExternalOrganizationResponseType"
+		nillable="true" type="tns:GetExternalOrganizationResponseType" />
+
+	<xs:complexType
+		name="EmDictionaryOfExternalOriginatorOrgSettingExternalOrganizationContract">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Item">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Key" type="tns:ExternalOriginatorOrgSetting" />
+						<xs:element name="Value" nillable="true"
+							type="tns:ExternalOrganizationContract" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ExternalOrganizationContract">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ApprovalStatus" nillable="true"
+				type="tns:ApprovalStatus" />
+			<xs:element minOccurs="0" name="AssignableSalesReps"
+				nillable="true" type="tns:AssignableSalesReps" />
+			<xs:element minOccurs="0" name="BasicInfo" nillable="true"
+				type="tns:BasicInfo">
+			</xs:element>
+			<xs:element minOccurs="0" name="ProductAndPricing"
+				nillable="true" type="tns:PriceGroupGetContract">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PriceGroupGetContract">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="EPPSCompModel" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="EPPSUserName" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="PriceGroup" nillable="true"
+				type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PriceGroupGetContract" nillable="true"
+		type="tns:PriceGroupGetContract" />
+	<xs:complexType name="BasicInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Address" nillable="true"
+				type="xs:string">
+			</xs:element>
+			<xs:element minOccurs="0" name="Broker" type="xs:boolean" />
+			<xs:element minOccurs="0" name="CanCloseInOwnName" type="xs:int" />
+			<xs:element minOccurs="0" name="CanFundInOwnName" type="xs:int" />
+			<xs:element minOccurs="0" name="ChannelType"
+				type="tns:ExternalOriginatorEntityType">
+			</xs:element>
+			<xs:element minOccurs="0" name="City" nillable="true"
+				type="xs:string">
+			</xs:element>
+			<xs:element minOccurs="0" name="CompanyLegalName"
+				nillable="true" type="xs:string">
+			</xs:element>
+			<xs:element minOccurs="0" name="CompanyNetWorth" type="xs:decimal"></xs:element>
+			<xs:element minOccurs="0" name="CompanyOwnerName"
+				nillable="true" type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="Correspondent" type="xs:boolean" />
+			<xs:element minOccurs="0" name="DUSponsored" type="xs:int" />
+			<xs:element minOccurs="0" name="DateOfIncorporation" type="xs:dateTime"></xs:element>
+			<xs:element minOccurs="0" name="DisabledLogin" type="xs:boolean" />
+			<xs:element minOccurs="0" name="EOCompany" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="EOExpirationDate" type="xs:dateTime"></xs:element>
+			<xs:element minOccurs="0" name="EOPolicyNumber" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="Email" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="EmailForLockInfo"
+				nillable="true" type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="EmailForRateSheet"
+				nillable="true" type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="FaxForLockInfo" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="FaxForRateSheet" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="FaxNumber" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="FinancialsLastUpdate"
+				type="xs:dateTime"></xs:element>
+			<xs:element minOccurs="0" name="FinancialsPeriod"
+				nillable="true" type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="Incorporated" type="xs:boolean" />
+			<xs:element minOccurs="0" name="LastLoanSubmitted" type="xs:dateTime"></xs:element>
+			<xs:element minOccurs="0" name="MERSOriginatingORGID"
+				nillable="true" type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="Manager" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="NmlsId" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="OrgID" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="OrganizationName"
+				nillable="true" type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="OrganizationType"
+				type="tns:ExternalOriginatorOrgType"></xs:element>
+			<xs:element minOccurs="0" name="OtherEntityDescription"
+				nillable="true" type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="PhoneNumber" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="State" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="StateIncorp" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="TPOID" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="TaxID" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="TypeOfEntity" type="xs:int" />
+			<xs:element minOccurs="0" name="UseParentInfoForBusinessInfo"
+				type="xs:boolean" />
+			<xs:element minOccurs="0" name="UseParentInfoForCompanyDetails"
+				type="xs:boolean" />
+			<xs:element minOccurs="0" name="UseParentInfoForRateLock"
+				type="xs:boolean" />
+			<xs:element minOccurs="0" name="UseSSNFormat" type="xs:boolean" />
+			<xs:element minOccurs="0" name="Website" nillable="true"
+				type="xs:string"></xs:element>
+			<xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="BasicInfo" nillable="true" type="tns:BasicInfo" />
+
+	<xs:simpleType name="ExternalOriginatorEntityType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None" />
+			<xs:enumeration value="Broker" />
+			<xs:enumeration value="Correspondent" />
+			<xs:enumeration value="Both" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ExternalOriginatorEntityType" nillable="true"
+		type="tns:ExternalOriginatorEntityType" />
+
+	<xs:simpleType name="ExternalOriginatorOrgType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Company" />
+			<xs:enumeration value="CompanyExtension" />
+			<xs:enumeration value="Branch" />
+			<xs:enumeration value="BranchExtension" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ExternalOriginatorOrgType" nillable="true"
+		type="tns:ExternalOriginatorOrgType" />
+
+	<xs:complexType name="ApprovalStatus">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="AddToWatchlist" type="xs:boolean" />
+			<xs:element minOccurs="0" name="ApplicationDate" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="ApprovedDate" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="CompanyRating" type="xs:int" />
+			<xs:element minOccurs="0" name="CurrentStatus" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="CurrentStatusDate" type="xs:dateTime" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ApprovalStatus" nillable="true"
+		type="tns:ApprovalStatus" />
+
+	<xs:complexType name="AssignableSalesReps">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Email" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Name" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Persona" nillable="true"
+				type="tns:ArrayOfPersona" />
+			<xs:element minOccurs="0" name="PhoneNumber" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AssignableSalesReps" nillable="true"
+		type="tns:AssignableSalesReps" />
+	<xs:complexType name="ArrayOfPersona">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Persona"
+				nillable="true" type="tns:Persona" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfPersona" nillable="true"
+		type="tns:ArrayOfPersona" />
+	<xs:complexType name="Persona">
+		<xs:sequence>
+			<xs:element name="aclFeaturesDefault" type="xs:boolean" />
+			<xs:element name="displayOrder" type="xs:int" />
+			<xs:element name="personaID" type="xs:int" />
+			<xs:element name="personaName" nillable="true" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Persona" nillable="true" type="tns:Persona" />
+
+	<xs:complexType name="CreateExternalContactResponseType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ContactID" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="ExternalUserID" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Password" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UpdateExternalContactRequestType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="TPOContact" nillable="true"
+				type="tns:TPOContacts" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UpdateExternalContactResponseType">
+		<xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ResetUserPasswordRequestType">
+		<xs:sequence>
+			<xs:element name="ExternalUserID" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="Password" nillable="true"
+				type="xs:string" />
+			<xs:element name="RequirePasswordChange" type="xs:boolean" />
+			<xs:element minOccurs="0" name="SendResetPasswordEmail"
+				type="xs:boolean" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ResetUserPasswordResponseType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Password" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</schema>
